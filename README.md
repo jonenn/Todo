@@ -1,4 +1,4 @@
-# Todo App
+# To-do App
 
 ## Overview
 
@@ -12,14 +12,6 @@ Todo App is a sleek and intuitive task management application developed with Rea
 
 As a frontend-based web application, TodoApp operates entirely within your browser, which means that all task data is stored locally on your device's browser.
 
-**Example:**
-
-Suppose you need to keep track of various tasks and deadlines. With TodoApp, you can:
-
-1. Create a Task List: Add tasks such as "Buy groceries."
-2. Organize Tasks: Sort tasks into categories like "Work," "My Day," or "Personal"
-3. Manage and Update: Easily update task details, mark tasks as completed, or delete tasks when they are no longer needed.
-
 **Design Overview:**
 
 I have created detailed UX / UI design assets using Figma to guide the development process. These include a style guide, visual mockups and prototypes that showcase the actual design and user experience of the application. All the images and icons have been also created by me unless noted otherwise.
@@ -31,14 +23,14 @@ You can explore both the prototypes and the design frames through the following 
 Design Frames:
 https://www.figma.com/design/lOQlzcxBAkwzTv0bsaat0b/To-Do-App?node-id=20-2&t=EPpFsWKwLT5U3asD-1
 
-Desktop Prototype:
-https://www.figma.com/proto/lOQlzcxBAkwzTv0bsaat0b/To-Do-App?node-id=0-1&viewport=146%2C435%2C0.37&t=EPpFsWKwLT5U3asD-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=55%3A99
-
 Mobile Prototype:
 https://www.figma.com/proto/lOQlzcxBAkwzTv0bsaat0b/To-Do-App?node-id=88-370&viewport=797%2C-166%2C0.53&t=EPpFsWKwLT5U3asD-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=194%3A59
 
 Tablet Prototype:
 https://www.figma.com/proto/lOQlzcxBAkwzTv0bsaat0b/To-Do-App?node-id=223-194&viewport=771%2C-937%2C0.45&t=EPpFsWKwLT5U3asD-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=223%3A1457
+
+Desktop Prototype:
+https://www.figma.com/proto/lOQlzcxBAkwzTv0bsaat0b/To-Do-App?node-id=0-1&viewport=146%2C435%2C0.37&t=EPpFsWKwLT5U3asD-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=55%3A99
 
 ## Table of Contents
 
@@ -46,8 +38,6 @@ https://www.figma.com/proto/lOQlzcxBAkwzTv0bsaat0b/To-Do-App?node-id=223-194&vie
 2. [Installation](#installation)
 3. [Usage](#usage)
 4. [Contributing](#contributing)
-5. [License](#license)
-6. [Contact](#contact)
 
 ## Features
 
@@ -152,3 +142,36 @@ TodoApp offers a range of features designed to help you manage and organize your
    ```
    Access the Project:
    Open your web browser and go to http://localhost:5173 (default port for Vite) to see the development build.
+
+## Usage
+
+Suppose you need to keep track of various tasks and deadlines. With TodoApp, you can:
+
+1. Create a Task List: Add tasks such as "Buy groceries."
+2. Organize Tasks: Sort tasks into lists like "Work," "My Day," or "Personal"
+3. Manage and Update: Easily update task details, mark tasks as completed, or delete tasks when they are no longer needed.
+
+New user?
+
+When you first use To-do App, you'll see a modal prompting you to enter a nickname. This nickname will be used throughout the app to personalize your experience.
+
+To add a new task:
+
+1. Go to the "Lists" menu.
+2. Click on an item from the menu like "My Day".
+3. Click on "Add a Task."
+4. Fill in the task click "+" or hit enter.
+
+To add a new list:
+
+1. Go to the "Lists" menu.
+2. Click on "New List".
+3. Hit enter.
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/your-feature`).
+3. Make your changes and commit them (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature/your-feature`).
+5. Open a pull request.
