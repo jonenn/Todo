@@ -1,68 +1,47 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+   position: relative;
+   display: flex;
+   /* justify-content: center; */
+   background-color: hsla(225, 67%, 84%, 1);
+   background-image: linear-gradient(
+         to top,
+         rgba(255, 255, 255, 0.42),
+         rgba(255, 255, 255, 0.42)
+      ),
+      radial-gradient(at 59% 75%, hsla(241, 80%, 74%, 1) 0px, transparent 50%),
+      radial-gradient(
+         at 27% 12%,
+         hsla(309, 83%, 71%, 0.71) 0px,
+         transparent 50%
+      ),
+      radial-gradient(
+         at 40% 43%,
+         hsla(225, 67%, 85%, 0.42) 0px,
+         transparent 50%
+      ),
+      radial-gradient(at 12% 10%, hsla(241, 80%, 74%, 1) 0px, transparent 50%),
+      radial-gradient(at 52% 64%, hsla(251, 83%, 71%, 1) 0px, transparent 50%),
+      radial-gradient(at 82% 45%, hsla(252, 83%, 71%, 1) 0px, transparent 50%),
+      radial-gradient(at 4% 71%, hsla(220, 83%, 71%, 1) 0px, transparent 50%);
+   background-size: cover, cover;
+   background-attachment: fixed;
+   background-repeat: no-repeat;
+   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+body::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   inset: 0;
+   width: 100%;
+   height: 100%;
+   background-image: url('./assets/pexels-pixabay-261403.jpg');
+   /* background-color: red; */
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   opacity: 0.15;
+   z-index: -3;
 }
