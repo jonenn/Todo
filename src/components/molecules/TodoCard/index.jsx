@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Checked } from '../../atoms/Checked';
 import './TodoCard.css';
+import { Edit } from '../../atoms/Edit';
+import { Delete } from '../../atoms/Delete';
 
 const TodoCard = () => {
    const [isChecked, setIsChecked] = useState(false);
@@ -22,6 +24,8 @@ const TodoCard = () => {
          >
             Lorem Ipsum
          </p>
+         <Edit />
+         <Delete />
       </div>
    );
 };

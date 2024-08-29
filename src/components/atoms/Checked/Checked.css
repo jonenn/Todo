@@ -1,6 +1,7 @@
 .check {
-   height: 1.5rem;
-   width: 1.5rem;
+   --check-size: 1.56rem;
+   height: var(--check-size);
+   width: var(--check-size);
    border-radius: 100%;
    display: inherit;
    justify-content: center;
@@ -18,9 +19,9 @@
 }
 
 .check__image {
-   --check-size: 0.81rem;
-   height: var(--check-size);
-   width: var(--check-size);
+   --check-img-size: 0.81rem;
+   height: var(--check-img-size);
+   width: var(--check-img-size);
    user-select: none;
    -moz-user-select: none;
    -khtml-user-select: none;
