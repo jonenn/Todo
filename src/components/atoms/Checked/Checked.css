@@ -1,5 +1,4 @@
 .check {
-   background-color: var(--green);
    height: 1.5rem;
    width: 1.5rem;
    border-radius: 100%;
@@ -7,6 +6,11 @@
    justify-content: center;
    align-items: center;
    border: 2px solid var(--green);
+   cursor: pointer;
+}
+
+.check--checked {
+   background-color: var(--green);
 }
 
 .check--unchecked {
@@ -17,6 +21,16 @@
    --check-size: 0.81rem;
    height: var(--check-size);
    width: var(--check-size);
+   user-select: none;
+   -moz-user-select: none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -o-user-select: none;
+}
+
+.check__image--checked {
+   display: flex;
+   visibility: visible;
 }
 
 .check__image--unchecked {

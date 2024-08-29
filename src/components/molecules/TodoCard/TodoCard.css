@@ -2,8 +2,20 @@
    display: flex;
    align-items: center;
    gap: 0.6rem;
+   padding: 0.25rem 2.1rem;
+   width: 100%;
+   background-color: var(--white-background);
 }
 
 .todo-card__name {
    font-size: 1.5rem;
+   font-weight: 200;
+}
+
+.todo-card__name--unchecked {
+   text-decoration: none;
+}
+
+.todo-card__name--checked {
+   text-decoration: line-through;
 }

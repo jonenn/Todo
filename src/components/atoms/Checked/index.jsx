@@ -1,10 +1,32 @@
 import './Checked.css';
 import check from '../../../assets/check.svg';
+import { useState } from 'react';
 
-const Checked = () => {
+const Checked = ({ onCheckChange }) => {
+   const [isCheckedChild, setIsCheckedChild] = useState(false);
+   const isItChecked = () => {
+      const newCheckState = !isCheckedChild;
+      setIsCheckedChild(newCheckState);
+      onCheckChange(newCheckState);
+      console.log(newCheckState);
+   };
    return (
-      <div className="check check--unchecked">
-         <img src={check} className="check__image--unchecked" />
+      <div
+         className={`check ${
+            isCheckedChild ? 'check--checked' : 'check--unchecked'
+         } `}
+         onClick={() => {
+            isItChecked();
+         }}
+      >
+         <img
+            src={check}
+            className={`check__image ${
+               isCheckedChild
+                  ? 'check__image--checked'
+                  : 'check__image--unchecked'
+            }`}
+         />
       </div>
    );
 };
