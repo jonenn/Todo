@@ -1,0 +1,9 @@
+.todo-card {
+   display: flex;
+   align-items: center;
+   gap: 0.6rem;
+}
+
+.todo-card__name {
+   font-size: 1.5rem;
+}

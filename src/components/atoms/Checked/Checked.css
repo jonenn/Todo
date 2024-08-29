@@ -1,0 +1,25 @@
+.check {
+   background-color: var(--green);
+   height: 1.5rem;
+   width: 1.5rem;
+   border-radius: 100%;
+   display: inherit;
+   justify-content: center;
+   align-items: center;
+   border: 2px solid var(--green);
+}
+
+.check--unchecked {
+   background-color: transparent;
+}
+
+.check__image {
+   --check-size: 0.81rem;
+   height: var(--check-size);
+   width: var(--check-size);
+}
+
+.check__image--unchecked {
+   display: none;
+   visibility: hidden;
+}

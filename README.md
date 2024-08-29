@@ -32,6 +32,15 @@ https://www.figma.com/proto/lOQlzcxBAkwzTv0bsaat0b/To-Do-App?node-id=223-194&vie
 Desktop Prototype:
 https://www.figma.com/proto/lOQlzcxBAkwzTv0bsaat0b/To-Do-App?node-id=0-1&viewport=146%2C435%2C0.37&t=EPpFsWKwLT5U3asD-0&scaling=scale-down&content-scaling=fixed&starting-point-node-id=55%3A99
 
+**Code Overview:**
+
+The idea for this project is to use new things such as, it wouldn't be a challenge if I was not trying new things:
+
+-  Atomic Design.
+-  Redux.
+-  Local Storage.
+-  BEM.
+
 ## Table of Contents
 
 1. [Features](#features)

@@ -1,3 +1,7 @@
+html {
+   --green: #add7d7;
+}
+
 body {
    position: relative;
    display: flex;
