@@ -1,14 +1,8 @@
 import './App.css';
-import { TodoCard } from './components/molecules/TodoCard';
-import { InteractionBar } from './components/molecules/InteractionBar';
+import { MainPage } from './components/pages/MainPage';
 
 function App() {
-   return (
-      <>
-         <InteractionBar placeholder="Search..." type="search" />
-         <TodoCard />
-      </>
-   );
+   return <MainPage />;
 }
 
 export default App;
