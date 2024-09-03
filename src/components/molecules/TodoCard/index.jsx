@@ -15,17 +15,21 @@ const TodoCard = () => {
    return (
       <div className="todo-card">
          <Checked onCheckChange={handleClick} />
-         <p
-            className={`todo-card__name ${
-               isChecked
-                  ? 'todo-card__name--checked'
-                  : 'todo-card__name--unchecked'
-            }`}
-         >
-            Lorem Ipsum
-         </p>
-         <Edit />
-         <Delete />
+         <div className="todo-card__content">
+            <p
+               className={`todo-card__name ${
+                  isChecked
+                     ? 'todo-card__name--checked'
+                     : 'todo-card__name--unchecked'
+               }`}
+            >
+               Lorem Ipsum
+            </p>
+            <div className="todo-card__icons">
+               <Edit />
+               <Delete />
+            </div>
+         </div>
       </div>
    );
 };

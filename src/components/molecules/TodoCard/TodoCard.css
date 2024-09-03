@@ -1,6 +1,7 @@
 .todo-card {
    display: flex;
    align-items: center;
+   /* justify-content: space-between; */
    gap: 1.17rem;
    padding: 0.25rem 2.1rem;
    width: 100%;
@@ -10,7 +11,7 @@
 
 .todo-card__name {
    font-size: 1.5rem;
-   font-weight: 200;
+   font-weight: 300;
 }
 
 .todo-card__name--unchecked {
@@ -31,4 +32,17 @@
    /* align-items: center; */
    /* border: 2px solid var(--green); */
    cursor: pointer;
+}
+
+.todo-card__content {
+   display: flex;
+   align-items: center;
+   gap: 1.17rem;
+   justify-content: space-between;
+   width: 100%;
+}
+
+.todo-card__icons {
+   display: flex;
+   gap: 1.17rem;
 }
