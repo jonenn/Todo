@@ -4,9 +4,15 @@
    /* justify-content: space-between; */
    gap: 1.17rem;
    padding: 0.25rem 2.1rem;
-   width: 100%;
-   background-color: var(--white-background);
    margin: 0 1.8rem;
+}
+
+.todo-card--checked {
+   background-color: var(--gray-bg);
+}
+
+.todo-card--unchecked {
+   background-color: var(--white-bg);
 }
 
 .todo-card__name {

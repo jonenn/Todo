@@ -1,6 +1,7 @@
 .main {
-   /* background-color: red; */
-   /* width: 100vw; */
    display: flex;
-   flex: 1 1;
+   margin: 0 15rem;
+   gap: 12rem;
+   align-items: center;
+   justify-content: center;
 }

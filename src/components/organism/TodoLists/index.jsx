@@ -1,11 +1,18 @@
 import { InteractionBar } from '../../molecules/InteractionBar';
 import { TodoCard } from '../../molecules/TodoCard';
+import './TodoLists.css';
 
 const TodoLists = () => {
    return (
       <div className="lists">
          <InteractionBar placeholder="Search..." type="search" />
-         <TodoCard />
+         <div className="lists__items">
+            <TodoCard />
+            <TodoCard />
+            <TodoCard />
+            <TodoCard />
+            <TodoCard />
+         </div>
          <InteractionBar placeholder="Add a Task" type="create" />
       </div>
    );

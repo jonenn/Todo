@@ -13,7 +13,11 @@ const TodoCard = () => {
    };
 
    return (
-      <div className="todo-card">
+      <div
+         className={`todo-card ${
+            isChecked ? 'todo-card--checked' : 'todo-card--unchecked'
+         }`}
+      >
          <Checked onCheckChange={handleClick} />
          <div className="todo-card__content">
             <p
