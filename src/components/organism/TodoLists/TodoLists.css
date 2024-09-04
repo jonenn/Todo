@@ -2,4 +2,10 @@
    display: flex;
    flex-direction: column;
    gap: 0.6rem;
+   height: 51vh;
+   overflow-y: auto;
+}
+
+.lists__add {
+   margin-top: 1.8rem;
 }

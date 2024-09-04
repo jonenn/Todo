@@ -5,6 +5,11 @@
    font-size: 1.5rem;
    font-weight: 300;
    background-color: unset;
+   width: 100%;
+}
+
+.input-bar:focus {
+   outline: none;
 }
 
 .input-bar::placeholder {

@@ -1,7 +1,7 @@
 import './H1.css';
 
 const H1 = ({ children }) => {
-   return <div className="main-title">{children}</div>;
+   return <h1 className="main-title">{children}</h1>;
 };
 
 export { H1 };

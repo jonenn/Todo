@@ -4,9 +4,10 @@
    /* width: 100%; */
    display: flex;
    justify-content: center;
-   padding: 1.2rem 0;
    background: linear-gradient(90deg, #7784f2 41%, #77abf2 62%);
    background-clip: text;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
+   margin: 0.6rem 0 0.3rem 0;
+   letter-spacing: -0.15rem;
 }

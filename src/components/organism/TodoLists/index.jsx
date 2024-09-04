@@ -12,8 +12,20 @@ const TodoLists = () => {
             <TodoCard />
             <TodoCard />
             <TodoCard />
+            <TodoCard />
+            <TodoCard />
+            <TodoCard />
+            <TodoCard />
+            <TodoCard />
+            <TodoCard />
+            <TodoCard />
+            <TodoCard />
          </div>
-         <InteractionBar placeholder="Add a Task" type="create" />
+         <InteractionBar
+            placeholder="Add a Task"
+            type="create"
+            className="lists__add"
+         />
       </div>
    );
 };
