@@ -58,3 +58,14 @@ body::before {
    opacity: 0.15;
    z-index: -3;
 }
+
+nav ul {
+   text-decoration: none;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+nav ul li {
+   font-size: 1.5rem;
+}
