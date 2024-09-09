@@ -1,6 +1,12 @@
 .nav-container {
    width: 45%;
-   height: 100vh;
+   height: 90vh;
+   background-color: var(--white-bg);
+   border-radius: 1.5rem;
+   padding: 4.2rem;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
 }
 
 .todos-container {
@@ -12,4 +18,22 @@
 
 .todos-container__title {
    margin: 3.3rem;
+}
+
+.nav__img {
+   width: 100%;
+}
+
+.separator {
+   border: none;
+   height: 1px;
+   margin: 0;
+   padding: 0;
+   background: linear-gradient(
+      90deg,
+      transparent 0%,
+      #9177f2 50%,
+      transparent 100%
+   );
+   margin: 1.2rem 0;
 }
