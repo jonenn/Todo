@@ -13,4 +13,9 @@
 
 .interaction-bar img {
    width: 1.8rem;
+   user-select: none;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   pointer-events: none;
 }

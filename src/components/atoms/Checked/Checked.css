@@ -1,7 +1,7 @@
 .check {
    --check-size: 1.56rem;
-   height: var(--check-size);
-   width: var(--check-size);
+   min-height: var(--check-size);
+   min-width: var(--check-size);
    border-radius: 100%;
    display: inherit;
    justify-content: center;
