@@ -8,6 +8,8 @@ html {
 
    --green: #add7d7;
    --purple: #9177f2;
+
+   --purple-opacity: rgba(145, 119, 242, 0.45);
 }
 
 body {
