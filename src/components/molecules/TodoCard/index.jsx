@@ -4,7 +4,7 @@ import './TodoCard.css';
 import { Edit } from '../../atoms/Edit';
 import { Delete } from '../../atoms/Delete';
 
-const TodoCard = () => {
+const TodoCard = ({ children }) => {
    const [isChecked, setIsChecked] = useState(false);
 
    const handleClick = (whenChecked) => {
@@ -27,7 +27,7 @@ const TodoCard = () => {
                      : 'todo-card__name--unchecked'
                }`}
             >
-               Lorem Ipsum
+               {children}
             </p>
             <div className="todo-card__icons">
                <Edit />

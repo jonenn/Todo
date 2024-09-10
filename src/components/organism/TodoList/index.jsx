@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { InteractionBar } from '../../molecules/InteractionBar';
 import { TodoCard } from '../../molecules/TodoCard';
-import './TodoLists.css';
+import './TodoList.css';
 
-const TodoLists = () => {
+const TodoList = ({ defaultTodos }) => {
    const listRef = useRef(null);
    const [isAtBottom, setIsAtBottom] = useState(false);
    const [isMiddle, setIsMiddle] = useState(false);
@@ -48,19 +48,9 @@ const TodoLists = () => {
                WebkitMaskImage: maskStyle,
             }}
          >
-            <TodoCard />
-            <TodoCard />
-            <TodoCard />
-            <TodoCard />
-            <TodoCard />
-            <TodoCard />
-            <TodoCard />
-            <TodoCard />
-            <TodoCard />
-            <TodoCard />
-            <TodoCard />
-            <TodoCard />
-            <TodoCard />
+            {defaultTodos.map((todo, index) => (
+               <TodoCard key={index}>{todo.text}</TodoCard>
+            ))}
             <div className="gradient-overlay"></div>
          </div>
          <InteractionBar
@@ -72,4 +62,4 @@ const TodoLists = () => {
    );
 };
 
-export { TodoLists };
+export { TodoList };
