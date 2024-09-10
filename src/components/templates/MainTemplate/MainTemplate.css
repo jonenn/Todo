@@ -17,7 +17,8 @@
 }
 
 .todos-container__title {
-   margin: 3.3rem;
+   margin: 2.4rem;
+   /* margin-bottom: 1.8rem; */
 }
 
 .nav__img {

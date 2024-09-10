@@ -1,10 +1,10 @@
 import { H1 } from '../../atoms/H1';
 import { H2 } from '../../atoms/H2';
-import { H3 } from '../../atoms/H3';
 import { Nav } from '../../organism/Nav';
 import { TodoLists } from '../../organism/TodoLists';
 import './MainTemplate.css';
 import octopus from '../../../assets/octopus.png';
+import { TodoCounter } from '../../molecules/TodoCounter';
 
 const MainTemplate = () => {
    return (
@@ -23,7 +23,7 @@ const MainTemplate = () => {
          <div className="todos-container">
             <div className="todos-container__title">
                <H1>My Day</H1>
-               <H3>3 out of 5</H3>
+               <TodoCounter total={15} completed={15} />
             </div>
             <TodoLists />
          </div>
