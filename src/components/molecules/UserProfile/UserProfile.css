@@ -1,0 +1,41 @@
+.profile {
+   display: flex;
+   align-items: center;
+   gap: 1.2rem;
+   justify-content: center;
+}
+
+.profile p {
+   font-size: 1.5rem;
+   font-weight: 300;
+}
+
+.profile__avatar {
+   width: 2.4rem;
+   height: 2.4rem;
+   background-color: red;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 50%;
+   background-color: var(--white-bg);
+   filter: drop-shadow(0px 0px 18px rgba(0, 0, 0, 0.06));
+}
+
+.profile__short {
+   text-transform: uppercase;
+   font-weight: 800;
+   color: var(--white-bg);
+   background-image: linear-gradient(
+         0deg,
+         rgba(255, 255, 255, 0.36) 0%,
+         rgba(255, 255, 255, 0.36) 100%
+      ),
+      linear-gradient(90deg, #7784f2 0%, #77abf2 100%);
+   border-radius: 50%;
+   min-height: 2.01rem;
+   min-width: 2.01rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}

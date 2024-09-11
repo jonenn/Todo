@@ -6,6 +6,7 @@ import './MainTemplate.css';
 import octopus from '../../../assets/octopus.png';
 import { TodoCounter } from '../../molecules/TodoCounter';
 import { useEffect, useState } from 'react';
+import UserProfile from '../../molecules/UserProfile';
 
 const MainTemplate = () => {
    const [checked, setChecked] = useState([]);
@@ -36,19 +37,21 @@ const MainTemplate = () => {
    };
    return (
       <>
-         <div className="nav-container">
-            <div>
+         <div className="nav">
+            <div className="nav__container"></div>
+            <div className="nav__main">
                <H2>Lists</H2>
                <hr className="separator" />
                <Nav />
             </div>
-            <div>
+            <div className="nav__content">
                <img src={octopus} alt="todo-octopus" className="nav__img" />
-               <hr className="separator" />
+               <hr className="separator separator--bottom" />
+               <UserProfile></UserProfile>
             </div>
          </div>
-         <div className="todos-container">
-            <div className="todos-container__title">
+         <div className="todos">
+            <div className="todos__title">
                <H1>My Day</H1>
                <TodoCounter total={defaultTodos.length} completed={checked} />
             </div>
