@@ -71,3 +71,11 @@ nav ul {
 nav ul li {
    font-size: 1.5rem;
 }
+
+img {
+   -webkit-user-drag: none;
+   user-drag: none;
+   /* pointer-events: none; */
+   user-select: none;
+   -webkit-user-select: none;
+}
