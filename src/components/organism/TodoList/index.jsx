@@ -3,10 +3,17 @@ import { InteractionBar } from '../../molecules/InteractionBar';
 import { TodoCard } from '../../molecules/TodoCard';
 import './TodoList.css';
 
-const TodoList = ({ defaultTodos }) => {
+const TodoList = ({
+   defaultTodos,
+   searchedTodos,
+   searchValue,
+   setSearchValue,
+}) => {
    const listRef = useRef(null);
    const [isAtBottom, setIsAtBottom] = useState(false);
+   const [isAtTop, setIsAtTop] = useState(false);
    const [isMiddle, setIsMiddle] = useState(false);
+   const [isBoth, setIsBoth] = useState(false);
 
    useEffect(() => {
       const handleScroll = () => {
@@ -19,27 +26,44 @@ const TodoList = ({ defaultTodos }) => {
 
          const atBottom = scrollTop + clientHeight >= scrollHeight - 1;
          const atTop = scrollTop === 0;
-         const middle = scrollTop && !atTop && scrollTop && !atBottom;
+         const middle = !atTop && !atBottom;
+         const both = atTop && atBottom;
 
          setIsAtBottom(atBottom);
+         setIsAtTop(atTop);
          setIsMiddle(middle);
+         setIsBoth(both);
       };
 
       const listElement = listRef.current;
       if (listElement) {
          listElement.addEventListener('scroll', handleScroll);
+         handleScroll();
       }
-   }, []);
+
+      return () => {
+         if (listElement) {
+            listElement.removeEventListener('scroll', handleScroll);
+         }
+      };
+   }, [searchValue]);
 
    let maskStyle = isMiddle
       ? 'linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%)'
+      : isAtTop && isAtBottom
+      ? 'none'
       : isAtBottom
       ? 'linear-gradient(to top, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%)'
       : 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%)';
 
    return (
       <div className="lists">
-         <InteractionBar placeholder="Search..." type="search" />
+         <InteractionBar
+            placeholder="Search..."
+            type="search"
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+         />
          <div
             className="lists__items"
             ref={listRef}
@@ -48,8 +72,10 @@ const TodoList = ({ defaultTodos }) => {
                WebkitMaskImage: maskStyle,
             }}
          >
-            {defaultTodos.map((todo, index) => (
-               <TodoCard key={index}>{todo.text}</TodoCard>
+            {searchedTodos.map((todo, index) => (
+               <TodoCard key={index} checked={todo.checked}>
+                  {todo.text}
+               </TodoCard>
             ))}
             <div className="gradient-overlay"></div>
          </div>

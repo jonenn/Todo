@@ -8,33 +8,34 @@ import { TodoCounter } from '../../molecules/TodoCounter';
 import { useEffect, useState } from 'react';
 import UserProfile from '../../molecules/UserProfile';
 
+const defaultTodos = [
+   { text: 'Research the Company', checked: true },
+   { text: 'Review the Job Description', checked: true },
+   { text: 'Prepare Your Elevator Pitch', checked: true },
+   { text: 'Highlight Key Achievements', checked: true },
+   { text: 'Develop Your Interview Strategy', checked: false },
+   { text: 'Practice Technical Skills', checked: false },
+   { text: 'Prepare Questions for the HR Interviewer', checked: false },
+   { text: 'Prepare Your Documents', checked: false },
+   { text: 'Dress Appropriately', checked: false },
+   { text: 'Plan Your Arrival', checked: false },
+   { text: 'Review Feedback', checked: false },
+];
+
 const MainTemplate = () => {
-   const [checked, setChecked] = useState([]);
+   const [todos, setTodos] = useState(defaultTodos);
+   const [searchValue, setSearchValue] = useState('');
 
-   useEffect(() => {
-      getCheckedTodos();
-   }, [checked]);
+   const checkedTodos = todos.filter((todo) => {
+      return !!todo.checked;
+   });
 
-   const defaultTodos = [
-      { text: 'Research the Company', checked: false },
-      { text: 'Review the Job Description', checked: false },
-      { text: 'Prepare Your Elevator Pitch', checked: false },
-      { text: 'Highlight Key Achievements', checked: false },
-      { text: 'Develop Your Interview Strategy', checked: false },
-      { text: 'Practice Technical Skills', checked: false },
-      { text: 'Prepare Questions for the HR Interviewer', checked: false },
-      { text: 'Prepare Your Documents', checked: false },
-      { text: 'Dress Appropriately', checked: false },
-      { text: 'Plan Your Arrival', checked: false },
-      { text: 'Review Feedback', checked: false },
-   ];
+   const totalTodos = todos.length;
 
-   const getCheckedTodos = () => {
-      const checkedTodos = defaultTodos.filter((todo) => {
-         return todo.checked === true;
-      });
-      setChecked(checkedTodos.length);
-   };
+   const searchedTodos = todos.filter((todo) => {
+      return todo.text.toLowerCase().includes(searchValue);
+   });
+
    return (
       <>
          <div className="nav">
@@ -53,9 +54,17 @@ const MainTemplate = () => {
          <div className="todos">
             <div className="todos__title">
                <H1>My Day</H1>
-               <TodoCounter total={defaultTodos.length} completed={checked} />
+               <TodoCounter
+                  total={totalTodos}
+                  completed={checkedTodos.length}
+               />
             </div>
-            <TodoList defaultTodos={defaultTodos} />
+            <TodoList
+               defaultTodos={defaultTodos}
+               searchedTodos={searchedTodos}
+               searchValue={searchValue}
+               setSearchValue={setSearchValue}
+            />
          </div>
       </>
    );

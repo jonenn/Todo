@@ -4,7 +4,7 @@
    /* justify-content: space-between; */
    gap: 1.17rem;
    padding: 0.25rem 2.1rem;
-   margin: 0 1.8rem;
+   margin: 0 3rem;
 }
 
 .todo-card--checked {

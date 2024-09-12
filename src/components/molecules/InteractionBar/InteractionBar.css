@@ -11,6 +11,9 @@
    margin-bottom: 1.2rem;
 }
 
+.interaction-bar:focus {
+   outline-color: red;
+}
 .interaction-bar img {
    width: 1.8rem;
    user-select: none;

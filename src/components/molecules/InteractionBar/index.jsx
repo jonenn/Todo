@@ -4,7 +4,13 @@ import createIcon from '../../../assets/plus.svg';
 import confirmIcon from '../../../assets/check2.svg';
 import './InteractionBar.css';
 
-const InteractionBar = ({ placeholder, type, className }) => {
+const InteractionBar = ({
+   placeholder,
+   type,
+   className,
+   searchValue,
+   setSearchValue,
+}) => {
    const barTypes = [
       {
          type: 'search',
@@ -23,7 +29,11 @@ const InteractionBar = ({ placeholder, type, className }) => {
    const icon = barTypes.find((item) => item.type === type);
    return (
       <div className={`interaction-bar ${className}`}>
-         <InputBar placeholder={placeholder} />
+         <InputBar
+            placeholder={placeholder}
+            searchValue={searchValue}
+            setSearchValue={setSearchValue}
+         />
          {icon && icon.icon}
       </div>
    );
