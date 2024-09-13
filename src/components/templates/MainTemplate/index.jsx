@@ -9,10 +9,10 @@ import { useEffect, useState } from 'react';
 import UserProfile from '../../molecules/UserProfile';
 
 const defaultTodos = [
-   { text: 'Research the Company', checked: true },
-   { text: 'Review the Job Description', checked: true },
-   { text: 'Prepare Your Elevator Pitch', checked: true },
-   { text: 'Highlight Key Achievements', checked: true },
+   { text: 'Research the Company', checked: false },
+   { text: 'Review the Job Description', checked: false },
+   { text: 'Prepare Your Elevator Pitch', checked: false },
+   { text: 'Highlight Key Achievements', checked: false },
    { text: 'Develop Your Interview Strategy', checked: false },
    { text: 'Practice Technical Skills', checked: false },
    { text: 'Prepare Questions for the HR Interviewer', checked: false },
@@ -38,11 +38,14 @@ const MainTemplate = () => {
       return todoText.includes(inputText);
    });
 
-   const checkATodo = (index, checkState) => {
+   const checkATodo = (text, checkState) => {
       const newTodos = [...todos];
-      newTodos[index] = { ...newTodos[index], checked: checkState };
+      const todoIndex = newTodos.findIndex((todo) => {
+         return todo.text === text;
+      });
+      console.log(todoIndex);
+      newTodos[todoIndex] = { ...newTodos[todoIndex], checked: checkState };
       setTodos(newTodos);
-      console.log(newTodos);
    };
 
    return (

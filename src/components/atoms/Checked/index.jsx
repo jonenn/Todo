@@ -2,13 +2,13 @@ import './Checked.css';
 import checkIcon from '../../../assets/check.svg';
 import { useState } from 'react';
 
-const Checked = ({ onCheckChange, checked, onComplete, index }) => {
+const Checked = ({ onCheckChange, checked, onComplete, text }) => {
    const [isCheckedChild, setIsCheckedChild] = useState(checked);
    const isItChecked = () => {
       const newCheckState = !isCheckedChild;
       setIsCheckedChild(newCheckState);
       onCheckChange(newCheckState);
-      onComplete(index, newCheckState);
+      onComplete(text, newCheckState);
    };
    return (
       <div

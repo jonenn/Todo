@@ -4,7 +4,7 @@ import './TodoCard.css';
 import { Edit } from '../../atoms/Edit';
 import { Delete } from '../../atoms/Delete';
 
-const TodoCard = ({ children, checked, onComplete, index }) => {
+const TodoCard = ({ children, checked, onComplete, text }) => {
    const [isChecked, setIsChecked] = useState(checked);
 
    const handleClick = (whenChecked) => {
@@ -22,7 +22,7 @@ const TodoCard = ({ children, checked, onComplete, index }) => {
             onCheckChange={handleClick}
             checked={checked}
             onComplete={onComplete}
-            index={index}
+            text={text}
          />
          <div className="todo-card__content">
             <p

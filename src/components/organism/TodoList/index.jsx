@@ -69,12 +69,12 @@ const TodoList = ({
                WebkitMaskImage: maskStyle,
             }}
          >
-            {searchedTodos.map((todo, index) => (
+            {searchedTodos.map((todo) => (
                <TodoCard
-                  key={index}
+                  key={todo.text}
                   checked={todo.checked}
                   onComplete={onComplete}
-                  index={index}
+                  text={todo.text}
                >
                   {todo.text}
                </TodoCard>

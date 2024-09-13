@@ -13,7 +13,12 @@ const TodoCounter = ({ completed, total }) => {
          : 'Keep going, you’ve got this!';
    return (
       <H3>
-         {phrase} {completed > 0 ? ` ${completed} out of ${total}` : ''}
+         {phrase}{' '}
+         {completed === total
+            ? ''
+            : completed > 0
+            ? ` ${completed} out of ${total}`
+            : ''}
       </H3>
    );
 };
