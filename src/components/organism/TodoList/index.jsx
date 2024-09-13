@@ -8,6 +8,7 @@ const TodoList = ({
    searchValue,
    setSearchValue,
    onComplete,
+   onDelete,
 }) => {
    const listRef = useRef(null);
    const [isAtBottom, setIsAtBottom] = useState(false);
@@ -74,6 +75,7 @@ const TodoList = ({
                   key={todo.text}
                   checked={todo.checked}
                   onComplete={onComplete}
+                  onDelete={onDelete}
                   text={todo.text}
                >
                   {todo.text}

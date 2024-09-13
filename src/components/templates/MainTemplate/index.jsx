@@ -48,6 +48,16 @@ const MainTemplate = () => {
       setTodos(newTodos);
    };
 
+   const deleteATodo = (text) => {
+      const newTodos = [...todos];
+      const todoIndex = newTodos.findIndex((todo) => {
+         return todo.text === text;
+      });
+      newTodos.splice(todoIndex, 1);
+      setTodos(newTodos);
+      console.log(newTodos);
+   };
+
    return (
       <>
          <div className="nav">
@@ -77,6 +87,7 @@ const MainTemplate = () => {
                setSearchValue={setSearchValue}
                todos={todos}
                onComplete={checkATodo}
+               onDelete={deleteATodo}
             />
          </div>
       </>

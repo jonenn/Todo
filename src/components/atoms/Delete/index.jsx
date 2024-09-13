@@ -1,8 +1,8 @@
 import deleteIcon from '../../../assets/delete.svg';
 
-const Delete = () => {
+const Delete = ({ onDelete, text }) => {
    const handleClick = () => {
-      console.log('removed!');
+      onDelete(text);
    };
    return (
       <div className="todo-card__icon">
