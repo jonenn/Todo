@@ -33,8 +33,17 @@ const MainTemplate = () => {
    const totalTodos = todos.length;
 
    const searchedTodos = todos.filter((todo) => {
-      return todo.text.toLowerCase().includes(searchValue);
+      const todoText = todo.text.toLowerCase();
+      const inputText = searchValue.toLowerCase();
+      return todoText.includes(inputText);
    });
+
+   const checkATodo = (index, checkState) => {
+      const newTodos = [...todos];
+      newTodos[index] = { ...newTodos[index], checked: checkState };
+      setTodos(newTodos);
+      console.log(newTodos);
+   };
 
    return (
       <>
@@ -60,10 +69,11 @@ const MainTemplate = () => {
                />
             </div>
             <TodoList
-               defaultTodos={defaultTodos}
                searchedTodos={searchedTodos}
                searchValue={searchValue}
                setSearchValue={setSearchValue}
+               todos={todos}
+               onComplete={checkATodo}
             />
          </div>
       </>

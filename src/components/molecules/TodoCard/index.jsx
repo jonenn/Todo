@@ -4,7 +4,7 @@ import './TodoCard.css';
 import { Edit } from '../../atoms/Edit';
 import { Delete } from '../../atoms/Delete';
 
-const TodoCard = ({ children, checked }) => {
+const TodoCard = ({ children, checked, onComplete, index }) => {
    const [isChecked, setIsChecked] = useState(checked);
 
    const handleClick = (whenChecked) => {
@@ -18,7 +18,12 @@ const TodoCard = ({ children, checked }) => {
             isChecked ? 'todo-card--checked' : 'todo-card--unchecked'
          }`}
       >
-         <Checked onCheckChange={handleClick} checked={checked} />
+         <Checked
+            onCheckChange={handleClick}
+            checked={checked}
+            onComplete={onComplete}
+            index={index}
+         />
          <div className="todo-card__content">
             <p
                className={`todo-card__name ${
