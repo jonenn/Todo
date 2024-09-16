@@ -45,7 +45,40 @@
    align-items: center;
    gap: 1.17rem;
    justify-content: space-between;
+   width: 90%;
+   max-width: 90%;
+}
+
+.todo-card__input {
+   border: none;
+   outline: none;
+   background-color: transparent;
+   font-size: 1.5rem;
+   font-family: inherit;
+   font-weight: 300;
+   color: var(--purple);
+   /* display: block; */
+   margin: 1rem 0;
    width: 100%;
+   /* height: fit-content; */
+   /* overflow: visible; Allows scrolling if text exceeds visible area */
+   resize: none;
+   box-sizing: border-box;
+   overflow: hidden;
+   /* height: min-content; */
+   /* min-height: 1rem; */
+   field-sizing: content;
+   -webkit-field-sizing: content;
+   display: block;
+   margin-block-start: 1em;
+   margin-block-end: 1em;
+   margin-inline-start: 0px;
+   margin-inline-end: 0px;
+   unicode-bidi: isolate;
+   padding: 0;
+   word-wrap: break-word;
+   overflow-wrap: break-word;
+   /* white-space: wrap; */
 }
 
 .todo-card__icons {

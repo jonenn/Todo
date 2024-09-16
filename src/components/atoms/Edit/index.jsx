@@ -1,13 +1,16 @@
+import { useState } from 'react';
 import editIcon from '../../../assets/edit.svg';
 
-const Edit = () => {
+const Edit = ({ onEdit, text }) => {
    const handleClick = () => {
-      console.log('edited!');
+      onEdit(text);
    };
    return (
-      <div className="todo-card__icon">
-         <img src={editIcon} alt="" onClick={() => handleClick()} />
-      </div>
+      <>
+         <div className="todo-card__icon">
+            <img src={editIcon} alt="" onClick={() => handleClick()} />
+         </div>
+      </>
    );
 };
 

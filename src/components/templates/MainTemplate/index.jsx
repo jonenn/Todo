@@ -5,7 +5,7 @@ import { TodoList } from '../../organism/TodoList';
 import './MainTemplate.css';
 import octopus from '../../../assets/octopus.png';
 import { TodoCounter } from '../../molecules/TodoCounter';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import UserProfile from '../../molecules/UserProfile';
 
 const defaultTodos = [
@@ -38,26 +38,6 @@ const MainTemplate = () => {
       return todoText.includes(inputText);
    });
 
-   const checkATodo = (text, checkState) => {
-      const newTodos = [...todos];
-      const todoIndex = newTodos.findIndex((todo) => {
-         return todo.text === text;
-      });
-      console.log(todoIndex);
-      newTodos[todoIndex] = { ...newTodos[todoIndex], checked: checkState };
-      setTodos(newTodos);
-   };
-
-   const deleteATodo = (text) => {
-      const newTodos = [...todos];
-      const todoIndex = newTodos.findIndex((todo) => {
-         return todo.text === text;
-      });
-      newTodos.splice(todoIndex, 1);
-      setTodos(newTodos);
-      console.log(newTodos);
-   };
-
    return (
       <>
          <div className="nav">
@@ -86,8 +66,9 @@ const MainTemplate = () => {
                searchValue={searchValue}
                setSearchValue={setSearchValue}
                todos={todos}
-               onComplete={checkATodo}
-               onDelete={deleteATodo}
+               setTodos={setTodos}
+               // onEdit={editATodo}
+               // editing={editing}
             />
          </div>
       </>

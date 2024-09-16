@@ -7,8 +7,8 @@ const TodoList = ({
    searchedTodos,
    searchValue,
    setSearchValue,
-   onComplete,
-   onDelete,
+   todos,
+   setTodos,
 }) => {
    const listRef = useRef(null);
    const [isAtBottom, setIsAtBottom] = useState(false);
@@ -74,9 +74,9 @@ const TodoList = ({
                <TodoCard
                   key={todo.text}
                   checked={todo.checked}
-                  onComplete={onComplete}
-                  onDelete={onDelete}
                   text={todo.text}
+                  todos={todos}
+                  setTodos={setTodos}
                >
                   {todo.text}
                </TodoCard>

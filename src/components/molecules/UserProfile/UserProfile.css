@@ -10,18 +10,6 @@
    font-weight: 300;
 }
 
-.profile__avatar {
-   width: 2.4rem;
-   height: 2.4rem;
-   background-color: red;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   border-radius: 50%;
-   background-color: var(--white-bg);
-   filter: drop-shadow(0px 0px 18px rgba(0, 0, 0, 0.06));
-}
-
 .profile__short {
    text-transform: uppercase;
    font-weight: 800;
@@ -40,4 +28,7 @@
    align-items: center;
    user-select: none;
    -webkit-user-select: none;
+   outline: 3px solid var(--white-bg);
+   box-sizing: content-box;
+   filter: drop-shadow(0px 0px 18px rgba(0, 0, 0, 0.06));
 }
