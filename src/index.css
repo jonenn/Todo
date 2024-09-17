@@ -11,6 +11,8 @@ html {
    --purple: #9177f2;
    --lighter-purple: #b4b3f7;
 
+   --selected-bg: rgba(206, 210, 228, 0.3);
+
    --purple-opacity: rgba(145, 119, 242, 0.45);
 }
 
