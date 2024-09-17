@@ -28,16 +28,33 @@
    text-decoration: line-through;
 }
 
-.todo-card__icon img {
+.todo-card__icon {
+   display: inherit;
+   justify-content: center;
+   align-items: center;
+   aspect-ratio: 1 / 1;
+}
+
+.todo-card__icon img,
+.todo-card__icon svg {
    --icon-size: 1.41rem;
    height: var(--icon-size);
-   /* width: var(--icon-size); */
+   width: var(--icon-size);
    /* border-radius: 100%; */
-   /* display: inherit; */
-   /* justify-content: center; */
-   /* align-items: center; */
    /* border: 2px solid var(--green); */
    cursor: pointer;
+}
+
+.todo-card__icon--save img {
+   --icon-size--save: 1.2rem;
+   height: var(--icon-size--save);
+   width: var(--icon-size--save);
+   /* border-radius: 9999999px; */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   aspect-ratio: 1 / 1;
+   overflow: visible;
 }
 
 .todo-card__content {

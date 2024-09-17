@@ -1,8 +1,8 @@
 import { InputBar } from '../../atoms/InputBar';
 import searchIcon from '../../../assets/search.svg';
 import createIcon from '../../../assets/plus.svg';
-import confirmIcon from '../../../assets/check2.svg';
 import './InteractionBar.css';
+import CheckIcon from '../../atoms/CheckIcon';
 
 const InteractionBar = ({
    placeholder,
@@ -22,7 +22,7 @@ const InteractionBar = ({
       },
       {
          type: 'confirm',
-         icon: <img src={confirmIcon} alt="" />,
+         icon: <CheckIcon />,
       },
    ];
 

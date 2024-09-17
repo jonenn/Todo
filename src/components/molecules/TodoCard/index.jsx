@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Checked } from '../../atoms/Checked';
 import './TodoCard.css';
 import { Edit } from '../../atoms/Edit';
 import { Delete } from '../../atoms/Delete';
 import TextareaAutosize from 'react-textarea-autosize';
+import { Save } from '../../atoms/Save';
 
 const TodoCard = ({ children, checked, onEdit, text, todos, setTodos }) => {
    const [isChecked, setIsChecked] = useState(checked);
@@ -36,13 +37,12 @@ const TodoCard = ({ children, checked, onEdit, text, todos, setTodos }) => {
       console.log(newTodos);
    };
 
-   const editATodo = (text) => {
+   const editATodo = () => {
       setEditing(true);
-      const newTodos = [...todos];
-      const todoIndex = newTodos.findIndex((todo) => {
-         return todo.text === text;
-      });
-      console.log('lets edit', todoIndex);
+      // const newTodos = [...todos];
+      // const todoIndex = newTodos.findIndex((todo) => {
+      //    return todo.text === text;
+      // });
       // newTodos.splice(todoIndex, 1);
       // setTodos(newTodos);
       // console.log(newTodos);
@@ -50,6 +50,19 @@ const TodoCard = ({ children, checked, onEdit, text, todos, setTodos }) => {
 
    const editValue = (eve) => {
       setTodoValue(eve.target.value);
+   };
+
+   const saveATodo = () => {
+      const newTodos = [...todos];
+      const todoIndex = newTodos.findIndex((todo) => {
+         return todo.text === text;
+      });
+      console.log(todoIndex);
+      newTodos[todoIndex] = { ...newTodos[todoIndex], text: todoValue };
+      // newTodos.splice(todoIndex, 1);
+      setTodos(newTodos);
+      console.log(newTodos);
+      setEditing(false);
    };
 
    return (
@@ -71,7 +84,7 @@ const TodoCard = ({ children, checked, onEdit, text, todos, setTodos }) => {
                   value={todoValue}
                   onChange={editValue}
                   maxRows={7}
-                  maxlength="200"
+                  maxLength="200"
                />
             ) : (
                <p
@@ -81,11 +94,15 @@ const TodoCard = ({ children, checked, onEdit, text, todos, setTodos }) => {
                         : 'todo-card__name--unchecked'
                   }`}
                >
-                  {children}
+                  {todoValue}
                </p>
             )}
             <div className="todo-card__icons">
-               <Edit onEdit={editATodo} text={text} />
+               {editing ? (
+                  <Save onSave={saveATodo} text={text} />
+               ) : (
+                  <Edit onEdit={editATodo} />
+               )}
                <Delete onDelete={deleteATodo} text={text} />
             </div>
          </div>

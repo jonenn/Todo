@@ -7,7 +7,9 @@ html {
    --p: #63616b;
 
    --green: #add7d7;
+   --lighter-green: #eff7f9;
    --purple: #9177f2;
+   --lighter-purple: #b4b3f7;
 
    --purple-opacity: rgba(145, 119, 242, 0.45);
 }

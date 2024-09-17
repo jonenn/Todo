@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import editIcon from '../../../assets/edit.svg';
 
 const Edit = ({ onEdit, text }) => {

@@ -25,12 +25,13 @@ const TodoList = ({
          const clientHeight = listElement.clientHeight;
 
          const atBottom = scrollTop + clientHeight >= scrollHeight - 1;
-         const atTop = scrollTop === 0;
+         const atTop = scrollTop <= 0;
          const middle = !atTop && !atBottom;
 
          setIsAtBottom(atBottom);
          setIsAtTop(atTop);
          setIsMiddle(middle);
+         console.log(scrollTop);
       };
 
       const listElement = listRef.current;
