@@ -71,18 +71,26 @@ const TodoList = ({
                WebkitMaskImage: maskStyle,
             }}
          >
-            {searchedTodos.map((todo) => (
-               <TodoCard
-                  key={todo.text}
-                  checked={todo.checked}
-                  text={todo.text}
-                  todos={todos}
-                  setTodos={setTodos}
-               >
-                  {todo.text}
-               </TodoCard>
-            ))}
-            <div className="gradient-overlay"></div>
+            {todos.length === 0 ? (
+               <p className="no-todos">Create your first task!</p>
+            ) : searchedTodos.length === 0 ? (
+               <p className="no-todos no-results">
+                  No results found. Try a different search term.
+               </p>
+            ) : (
+               searchedTodos.map((todo) => (
+                  <TodoCard
+                     key={todo.text}
+                     checked={todo.checked}
+                     text={todo.text}
+                     todos={todos}
+                     setTodos={setTodos}
+                  >
+                     {todo.text}
+                  </TodoCard>
+               ))
+            )}
+            {console.log(todos.length === 0)}
          </div>
          <InteractionBar
             placeholder="Add a Task"

@@ -10,6 +10,7 @@ const InteractionBar = ({
    className,
    searchValue,
    setSearchValue,
+   ref,
 }) => {
    const barTypes = [
       {

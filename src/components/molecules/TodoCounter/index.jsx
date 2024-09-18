@@ -2,7 +2,9 @@ import { H3 } from '../../atoms/H3';
 
 const TodoCounter = ({ completed, total }) => {
    const phrase =
-      completed === total
+      total === 0
+         ? 'Get started!'
+         : completed === total
          ? 'You’ve nailed it!'
          : completed > total - 3
          ? 'Almost there!'

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './InputBar.css';
 
 const InputBar = ({ placeholder, searchValue, setSearchValue }) => {

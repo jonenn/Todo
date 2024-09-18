@@ -27,6 +27,43 @@
    border-radius: 1.2rem;
 }
 
+.no-todos {
+   user-select: none;
+   font-size: 1.11rem;
+   color: var(--white-bg);
+   background-color: var(--selected-bg-o);
+   background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='%23ffffffa8' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;
+   padding: 1.5rem;
+   margin: 0 3rem;
+   text-align: center;
+   /* border: 3px dashed var(--white-bg); */
+}
+
+.no-results {
+   animation: shake 0.3s ease-in-out;
+}
+
 .lists__add {
    margin-top: 1.8rem;
+}
+
+@keyframes shake {
+   0% {
+      transform: translateX(0);
+   }
+   25% {
+      transform: translateX(-10px);
+   }
+   50% {
+      transform: translateX(10px);
+   }
+   75% {
+      transform: translateX(-10px);
+   }
+   100% {
+      transform: translateX(0);
+   }
 }
