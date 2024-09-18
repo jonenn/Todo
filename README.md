@@ -40,6 +40,7 @@ The idea for this project is to use new things such as, it wouldn't be a challen
 -  Redux.
 -  Local Storage.
 -  BEM.
+-  CSS Animations (@keyframes)
 
 ## Table of Contents
 

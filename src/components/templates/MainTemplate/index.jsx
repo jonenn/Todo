@@ -7,6 +7,8 @@ import octopus from '../../../assets/octopus.png';
 import { TodoCounter } from '../../molecules/TodoCounter';
 import { useState } from 'react';
 import UserProfile from '../../molecules/UserProfile';
+import { Icon } from '../../atoms/Icon';
+// import { Icon } from '../../atoms/Icon';
 
 const defaultTodos = [
    { text: 'Research the Company', checked: false },

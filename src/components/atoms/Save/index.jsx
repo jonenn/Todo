@@ -1,4 +1,6 @@
-import saveIcon from '../../../assets/save.svg';
+// import saveIcon from '../../../assets/save.svg';
+
+import { Icon } from '../Icon';
 
 const Save = ({ onSave, text }) => {
    const handleClick = () => {
@@ -8,7 +10,7 @@ const Save = ({ onSave, text }) => {
    return (
       <>
          <div className="todo-card__icon todo-card__icon--save">
-            <img src={saveIcon} alt="" onClick={() => handleClick()} />
+            <Icon type="save" onClick={() => handleClick()} />
          </div>
       </>
    );

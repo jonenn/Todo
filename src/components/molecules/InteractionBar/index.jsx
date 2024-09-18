@@ -1,8 +1,6 @@
 import { InputBar } from '../../atoms/InputBar';
-import searchIcon from '../../../assets/search.svg';
-import createIcon from '../../../assets/plus.svg';
 import './InteractionBar.css';
-import CheckIcon from '../../atoms/CheckIcon';
+import { Icon } from '../../atoms/Icon';
 
 const InteractionBar = ({
    placeholder,
@@ -10,24 +8,7 @@ const InteractionBar = ({
    className,
    searchValue,
    setSearchValue,
-   ref,
 }) => {
-   const barTypes = [
-      {
-         type: 'search',
-         icon: <img src={searchIcon} alt="" />,
-      },
-      {
-         type: 'create',
-         icon: <img src={createIcon} alt="" />,
-      },
-      {
-         type: 'confirm',
-         icon: <CheckIcon />,
-      },
-   ];
-
-   const icon = barTypes.find((item) => item.type === type);
    return (
       <div className={`interaction-bar ${className}`}>
          <InputBar
@@ -35,7 +16,7 @@ const InteractionBar = ({
             searchValue={searchValue}
             setSearchValue={setSearchValue}
          />
-         {icon && icon.icon}
+         <Icon type={type} />
       </div>
    );
 };

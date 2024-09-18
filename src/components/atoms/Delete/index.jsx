@@ -1,4 +1,4 @@
-import deleteIcon from '../../../assets/delete.svg';
+import { Icon } from '../Icon';
 
 const Delete = ({ onDelete, text }) => {
    const handleClick = () => {
@@ -6,7 +6,7 @@ const Delete = ({ onDelete, text }) => {
    };
    return (
       <div className="todo-card__icon">
-         <img src={deleteIcon} alt="" onClick={() => handleClick()} />
+         <Icon type="delete" onClick={() => handleClick()} />
       </div>
    );
 };

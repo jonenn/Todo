@@ -1,11 +1,11 @@
+import { Icon } from '../../atoms/Icon';
 import { NavItem } from '../../atoms/NavItem';
-import navIcon from '../../../assets/nav.svg';
 import './NavBtn.css';
 
 const NavBtn = ({ children }) => {
    return (
       <button className="nav__btn">
-         <img src={navIcon} alt="" />
+         <Icon type="list" />
          <nav>
             <NavItem>{children}</NavItem>
          </nav>

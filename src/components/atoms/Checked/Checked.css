@@ -16,6 +16,7 @@
 
 .check--checked {
    background-color: var(--green);
+   animation: checkedAnimation 0.3s ease-in-out;
 }
 
 .check--unchecked {
@@ -41,4 +42,19 @@
 .check__image--unchecked {
    display: none;
    visibility: hidden;
+}
+
+@keyframes checkedAnimation {
+   0% {
+      transform: scale(1);
+   }
+   25% {
+      transform: scale(0.5);
+   }
+   50% {
+      transform: scale(1.2);
+   }
+   100% {
+      transform: scale(1);
+   }
 }

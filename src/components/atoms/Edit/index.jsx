@@ -1,4 +1,4 @@
-import editIcon from '../../../assets/edit.svg';
+import { Icon } from '../Icon';
 
 const Edit = ({ onEdit, text }) => {
    const handleClick = () => {
@@ -7,7 +7,7 @@ const Edit = ({ onEdit, text }) => {
    return (
       <>
          <div className="todo-card__icon">
-            <img src={editIcon} alt="" onClick={() => handleClick()} />
+            <Icon type="edit" alt="" onClick={() => handleClick()} />
          </div>
       </>
    );

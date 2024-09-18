@@ -14,7 +14,7 @@
 .interaction-bar:focus {
    outline-color: red;
 }
-.interaction-bar img {
+.interaction-bar svg {
    width: 1.8rem;
    user-select: none;
    -webkit-user-select: none;

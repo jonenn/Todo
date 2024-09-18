@@ -1,24 +1,21 @@
-const CheckIcon = ({ color, size, onClick }) => {
-   return (
-      <svg
-         width={size}
-         height={size}
+<svg
+         width="37"
+         height="30"
          viewBox="0 0 37 30"
          fill="none"
          xmlns="http://www.w3.org/2000/svg"
-         onClick={onClick}
       >
          <g clip-path="url(#clip0_271_3530)">
             <path
                d="M13.8352 24.0998L29.1079 5.90022"
-               stroke={color}
+               stroke="#9177f2"
                stroke-width="2.7"
                stroke-linecap="round"
                stroke-linejoin="round"
             />
             <path
                d="M8.69995 18.7783L13.17 24.0998"
-               stroke={color}
+               stroke="#9177f2"
                stroke-width="2.7"
                stroke-linecap="round"
                stroke-linejoin="round"
@@ -35,7 +32,3 @@ const CheckIcon = ({ color, size, onClick }) => {
             </clipPath>
          </defs>
       </svg>
-   );
-};
-
-export default CheckIcon;

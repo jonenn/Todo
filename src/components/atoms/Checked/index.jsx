@@ -1,6 +1,6 @@
 import './Checked.css';
-import checkIcon from '../../../assets/check.svg';
 import { useState } from 'react';
+import { Icon } from '../Icon';
 
 const Checked = ({ onCheckChange, checked, onComplete, text }) => {
    const [isCheckedChild, setIsCheckedChild] = useState(checked);
@@ -17,8 +17,8 @@ const Checked = ({ onCheckChange, checked, onComplete, text }) => {
          } `}
          onClick={() => isItChecked()}
       >
-         <img
-            src={checkIcon}
+         <Icon
+            type="check"
             className={`check__image ${
                isCheckedChild
                   ? 'check__image--checked'
