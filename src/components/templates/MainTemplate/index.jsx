@@ -6,9 +6,7 @@ import './MainTemplate.css';
 import octopus from '../../../assets/octopus.png';
 import { TodoCounter } from '../../molecules/TodoCounter';
 import { useState } from 'react';
-import UserProfile from '../../molecules/UserProfile';
-import { Icon } from '../../atoms/Icon';
-// import { Icon } from '../../atoms/Icon';
+import { UserProfile } from '../../molecules/UserProfile';
 
 const defaultTodos = [
    { text: 'Research the Company', checked: false },
@@ -69,8 +67,6 @@ const MainTemplate = () => {
                setSearchValue={setSearchValue}
                todos={todos}
                setTodos={setTodos}
-               // onEdit={editATodo}
-               // editing={editing}
             />
          </div>
       </>

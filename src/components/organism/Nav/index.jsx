@@ -1,4 +1,4 @@
-import NavBtn from '../../molecules/NavBtn';
+import { NavBtn } from '../../molecules/NavBtn';
 import './Nav.css';
 
 const defaultLists = [

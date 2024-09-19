@@ -34,13 +34,19 @@ https://www.figma.com/proto/lOQlzcxBAkwzTv0bsaat0b/To-Do-App?node-id=0-1&viewpor
 
 **Code Overview:**
 
-The idea for this project is to use new things such as, it wouldn't be a challenge if I was not trying new things:
+This project is focused on exploring and integrating innovative concepts and techniques, making it a rewarding challenge. Key elements include:
 
--  Atomic Design.
--  Redux.
--  Local Storage.
--  BEM.
--  CSS Animations (@keyframes)
+-  Unique Design and Color Scheme: Emphasizing a fresh aesthetic that enhances user experience, while stepping out of my comfort zone to experiment with a new and bold color palette.
+
+-  Atomic Design: Utilizing a modular design methodology to create reusable components for improved maintainability.
+
+-  Redux: Implementing state management to facilitate efficient data flow and application state handling.
+
+-  Local Storage: Leveraging browser storage to persist user data and preferences for a seamless experience.
+
+-  BEM (Block Element Modifier): Adopting this naming convention to maintain clear and organized CSS structures.
+
+-  CSS Animations (@keyframes): Incorporating animations to enhance interactivity and engagement within the application.
 
 ## Table of Contents
 

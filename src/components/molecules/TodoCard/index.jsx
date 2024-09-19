@@ -12,6 +12,12 @@ const TodoCard = ({ children, checked, onEdit, text, todos, setTodos }) => {
    const [editing, setEditing] = useState(false);
    const [todoValue, setTodoValue] = useState(children);
 
+   const handleKeyDown = (eve) => {
+      if (eve.key === 'Enter') {
+         saveATodo();
+      }
+   };
+
    const handleClick = (whenChecked) => {
       setIsChecked(whenChecked);
       console.log(whenChecked, 'parent');
@@ -39,13 +45,6 @@ const TodoCard = ({ children, checked, onEdit, text, todos, setTodos }) => {
 
    const editATodo = () => {
       setEditing(true);
-      // const newTodos = [...todos];
-      // const todoIndex = newTodos.findIndex((todo) => {
-      //    return todo.text === text;
-      // });
-      // newTodos.splice(todoIndex, 1);
-      // setTodos(newTodos);
-      // console.log(newTodos);
    };
 
    const editValue = (eve) => {
@@ -59,7 +58,6 @@ const TodoCard = ({ children, checked, onEdit, text, todos, setTodos }) => {
       });
       console.log(todoIndex);
       newTodos[todoIndex] = { ...newTodos[todoIndex], text: todoValue };
-      // newTodos.splice(todoIndex, 1);
       setTodos(newTodos);
       console.log(newTodos);
       setEditing(false);
@@ -85,6 +83,7 @@ const TodoCard = ({ children, checked, onEdit, text, todos, setTodos }) => {
                   onChange={editValue}
                   maxRows={7}
                   maxLength="200"
+                  onKeyDown={handleKeyDown}
                />
             ) : (
                <p

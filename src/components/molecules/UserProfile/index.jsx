@@ -1,4 +1,4 @@
-import UserWelcome from '../../atoms/UserWelcome';
+import { UserWelcome } from '../../atoms/UserWelcome';
 import './UserProfile.css';
 
 const UserProfile = ({ children = 'Guest' }) => {
@@ -12,4 +12,4 @@ const UserProfile = ({ children = 'Guest' }) => {
    );
 };
 
-export default UserProfile;
+export { UserProfile };

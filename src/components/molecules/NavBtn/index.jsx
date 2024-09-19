@@ -13,4 +13,4 @@ const NavBtn = ({ children }) => {
    );
 };
 
-export default NavBtn;
+export { NavBtn };

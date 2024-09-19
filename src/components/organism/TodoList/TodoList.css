@@ -3,7 +3,7 @@
    flex-direction: column;
    gap: 0.6rem;
    /* max-height: 48vh; */
-   height: 42vh;
+   height: 45vh;
    overflow-y: auto;
    position: relative;
    mask-image: linear-gradient(
@@ -47,7 +47,8 @@
 }
 
 .lists__add {
-   margin-top: 1.8rem;
+   margin-top: 1.5rem;
+   margin-bottom: 0;
 }
 
 @keyframes shake {
