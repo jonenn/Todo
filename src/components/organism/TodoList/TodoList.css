@@ -1,9 +1,17 @@
+.lists {
+   display: flex;
+   flex-direction: column;
+   height: auto;
+   max-height: 78%;
+   min-height: 69%;
+}
+
 .lists__items {
    display: flex;
    flex-direction: column;
    gap: 0.6rem;
    /* max-height: 48vh; */
-   height: 45vh;
+   height: auto;
    overflow-y: auto;
    position: relative;
    mask-image: linear-gradient(
