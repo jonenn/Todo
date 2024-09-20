@@ -6,7 +6,16 @@ import { Delete } from '../../atoms/Delete';
 import TextareaAutosize from 'react-textarea-autosize';
 import { Save } from '../../atoms/Save';
 
-const TodoCard = ({ children, checked, onEdit, text, todos, setTodos }) => {
+const TodoCard = ({
+   children,
+   checked,
+   onEdit,
+   text,
+   todos,
+   setTodos,
+   addTodoValue,
+   saveAllTodos,
+}) => {
    const [isChecked, setIsChecked] = useState(checked);
 
    const [editing, setEditing] = useState(false);
@@ -61,11 +70,6 @@ const TodoCard = ({ children, checked, onEdit, text, todos, setTodos }) => {
       saveAllTodos(newTodos);
       console.log(newTodos);
       setEditing(false);
-   };
-
-   const saveAllTodos = (newTodos) => {
-      localStorage.setItem('todo-app-jonenn', JSON.stringify(newTodos));
-      setTodos(newTodos);
    };
 
    return (

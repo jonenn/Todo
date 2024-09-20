@@ -6,15 +6,18 @@ const InteractionBar = ({
    placeholder,
    type,
    className,
-   searchValue,
-   setSearchValue,
+   value,
+   setValue,
+   addATodo,
 }) => {
    return (
       <div className={`interaction-bar ${className}`}>
          <InputBar
             placeholder={placeholder}
-            searchValue={searchValue}
-            setSearchValue={setSearchValue}
+            value={value}
+            setValue={setValue}
+            type={type}
+            addATodo={addATodo}
          />
          <Icon type={type} />
       </div>

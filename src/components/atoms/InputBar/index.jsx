@@ -1,14 +1,23 @@
 import './InputBar.css';
 
-const InputBar = ({ placeholder, searchValue, setSearchValue }) => {
+const InputBar = ({ placeholder, value, setValue, type, addATodo }) => {
+   const handleKeyDown = (eve) => {
+      if (eve.key === 'Enter') {
+         addATodo();
+         setValue('');
+      }
+   };
    return (
       <input
          type="text"
          placeholder={placeholder}
          className="input-bar"
-         value={searchValue}
+         value={value}
          onChange={(eve) => {
-            setSearchValue(eve.target.value);
+            setValue(eve.target.value);
+         }}
+         onKeyDown={(eve) => {
+            handleKeyDown(eve);
          }}
       />
    );

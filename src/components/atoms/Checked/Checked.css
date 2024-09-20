@@ -1,5 +1,5 @@
 .check {
-   --check-size: 1.56rem;
+   --check-size: 1.8rem;
    min-height: var(--check-size);
    min-width: var(--check-size);
    border-radius: 100%;

@@ -30,6 +30,7 @@ const getInitialTodos = () => {
 const MainTemplate = () => {
    const [todos, setTodos] = useState(getInitialTodos);
    const [searchValue, setSearchValue] = useState('');
+   const [addTodoValue, setAddTodoValue] = useState('');
 
    useEffect(() => {
       localStorage.setItem('todo-app-jonenn', JSON.stringify(todos));
@@ -46,6 +47,17 @@ const MainTemplate = () => {
       const inputText = searchValue.toLowerCase();
       return todoText.includes(inputText);
    });
+
+   const addATodo = () => {
+      const newTodos = [{ text: addTodoValue, checked: false }, ...todos];
+      saveAllTodos(newTodos);
+      console.log(newTodos);
+   };
+
+   const saveAllTodos = (newTodos) => {
+      localStorage.setItem('todo-app-jonenn', JSON.stringify(newTodos));
+      setTodos(newTodos);
+   };
 
    return (
       <>
@@ -74,8 +86,12 @@ const MainTemplate = () => {
                searchedTodos={searchedTodos}
                searchValue={searchValue}
                setSearchValue={setSearchValue}
+               addTodoValue={addTodoValue}
+               setAddTodoValue={setAddTodoValue}
                todos={todos}
                setTodos={setTodos}
+               saveAllTodos={saveAllTodos}
+               addATodo={addATodo}
             />
          </div>
       </>

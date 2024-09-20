@@ -9,11 +9,16 @@ const TodoList = ({
    setSearchValue,
    todos,
    setTodos,
+   addTodoValue,
+   setAddTodoValue,
+   saveAllTodos,
+   addATodo,
 }) => {
    const listRef = useRef(null);
    const [isAtBottom, setIsAtBottom] = useState(false);
    const [isAtTop, setIsAtTop] = useState(false);
    const [isMiddle, setIsMiddle] = useState(false);
+   const [addTodo, setAddTodo] = useState('');
 
    useEffect(() => {
       const handleScroll = () => {
@@ -60,8 +65,8 @@ const TodoList = ({
          <InteractionBar
             placeholder="Search..."
             type="search"
-            searchValue={searchValue}
-            setSearchValue={setSearchValue}
+            value={searchValue}
+            setValue={setSearchValue}
          />
          <div
             className="lists__items"
@@ -85,6 +90,8 @@ const TodoList = ({
                      text={todo.text}
                      todos={todos}
                      setTodos={setTodos}
+                     addTodoValue={addTodoValue}
+                     saveAllTodos={saveAllTodos}
                   >
                      {todo.text}
                   </TodoCard>
@@ -96,6 +103,9 @@ const TodoList = ({
             placeholder="Add a Task"
             type="create"
             className="lists__add"
+            value={addTodoValue}
+            setValue={setAddTodoValue}
+            addATodo={addATodo}
          />
       </div>
    );
