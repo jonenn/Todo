@@ -5,7 +5,7 @@ import { TodoList } from '../../organism/TodoList';
 import './MainTemplate.css';
 import octopus from '../../../assets/octopus.png';
 import { TodoCounter } from '../../molecules/TodoCounter';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { UserProfile } from '../../molecules/UserProfile';
 
 const defaultTodos = [
@@ -22,9 +22,18 @@ const defaultTodos = [
    { text: 'Review Feedback', checked: false },
 ];
 
+const getInitialTodos = () => {
+   const parsedTodos = localStorage.getItem('todo-app-jonenn');
+   return parsedTodos ? JSON.parse(parsedTodos) : defaultTodos;
+};
+
 const MainTemplate = () => {
-   const [todos, setTodos] = useState(defaultTodos);
+   const [todos, setTodos] = useState(getInitialTodos);
    const [searchValue, setSearchValue] = useState('');
+
+   useEffect(() => {
+      localStorage.setItem('todo-app-jonenn', JSON.stringify(todos));
+   }, [todos]);
 
    const checkedTodos = todos.filter((todo) => {
       return !!todo.checked;

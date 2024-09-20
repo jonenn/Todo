@@ -39,7 +39,7 @@ const TodoCard = ({ children, checked, onEdit, text, todos, setTodos }) => {
          return todo.text === text;
       });
       newTodos.splice(todoIndex, 1);
-      setTodos(newTodos);
+      saveAllTodos(newTodos);
       console.log(newTodos);
    };
 
@@ -58,9 +58,14 @@ const TodoCard = ({ children, checked, onEdit, text, todos, setTodos }) => {
       });
       console.log(todoIndex);
       newTodos[todoIndex] = { ...newTodos[todoIndex], text: todoValue };
-      setTodos(newTodos);
+      saveAllTodos(newTodos);
       console.log(newTodos);
       setEditing(false);
+   };
+
+   const saveAllTodos = (newTodos) => {
+      localStorage.setItem('todo-app-jonenn', JSON.stringify(newTodos));
+      setTodos(newTodos);
    };
 
    return (
