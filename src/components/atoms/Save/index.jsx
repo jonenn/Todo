@@ -1,5 +1,3 @@
-// import saveIcon from '../../../assets/save.svg';
-
 import { Icon } from '../Icon';
 
 const Save = ({ onSave, text }) => {

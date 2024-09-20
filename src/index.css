@@ -16,6 +16,7 @@ html {
    --selected-bg-o: rgba(206, 210, 228, 0.15);
 
    --purple-opacity: rgba(145, 119, 242, 0.45);
+   --purple-opacity-2: rgba(145, 119, 242, 0.06);
 }
 
 body {

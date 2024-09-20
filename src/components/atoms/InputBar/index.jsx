@@ -1,6 +1,6 @@
 import './InputBar.css';
 
-const InputBar = ({ placeholder, value, setValue, type, addATodo }) => {
+const InputBar = ({ placeholder, value, setValue, addATodo }) => {
    const handleKeyDown = (eve) => {
       if (eve.key === 'Enter') {
          addATodo();
@@ -12,6 +12,7 @@ const InputBar = ({ placeholder, value, setValue, type, addATodo }) => {
          type="text"
          placeholder={placeholder}
          className="input-bar"
+         maxLength="200"
          value={value}
          onChange={(eve) => {
             setValue(eve.target.value);

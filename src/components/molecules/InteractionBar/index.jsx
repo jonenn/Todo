@@ -19,7 +19,16 @@ const InteractionBar = ({
             type={type}
             addATodo={addATodo}
          />
-         <Icon type={type} />
+         <div
+            className={`interaction-bar__icon interaction-bar__icon--${
+               value ? 'active' : ''
+            }`}
+            onClick={() => {
+               addATodo();
+            }}
+         >
+            <Icon type={type} />
+         </div>
       </div>
    );
 };
