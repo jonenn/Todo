@@ -1,7 +1,6 @@
 .todo-card {
    display: flex;
    align-items: center;
-   /* justify-content: space-between; */
    gap: 1.17rem;
    padding: 0.25rem 2.1rem;
    margin: 0 3rem;
@@ -18,7 +17,6 @@
 .todo-card__name {
    font-size: 1.5rem;
    font-weight: 300;
-   /* word-break: break-all; */
    overflow-wrap: break-word;
    white-space: normal;
    hyphens: auto;
@@ -40,6 +38,8 @@
    justify-content: center;
    align-items: center;
    aspect-ratio: 1 / 1;
+   padding: 0.3rem;
+   cursor: pointer;
 }
 
 .todo-card__icon img,
@@ -47,9 +47,6 @@
    --icon-size: 1.41rem;
    height: var(--icon-size);
    width: var(--icon-size);
-   /* border-radius: 100%; */
-   /* border: 2px solid var(--green); */
-   cursor: pointer;
    overflow: visible;
 }
 
@@ -57,7 +54,6 @@
    --icon-size--save: 1.2rem;
    height: var(--icon-size--save);
    width: var(--icon-size--save);
-   /* border-radius: 9999999px; */
    display: flex;
    justify-content: center;
    align-items: center;
@@ -84,16 +80,11 @@
    font-family: inherit;
    font-weight: 300;
    color: var(--purple);
-   /* display: block; */
    margin: 1rem 0;
    width: 100%;
-   /* height: fit-content; */
-   /* overflow: visible; Allows scrolling if text exceeds visible area */
    resize: none;
    box-sizing: border-box;
    overflow: hidden;
-   /* height: min-content; */
-   /* min-height: 1rem; */
    field-sizing: content;
    -webkit-field-sizing: content;
    display: block;
@@ -103,7 +94,6 @@
    word-wrap: break-word;
    overflow-wrap: break-word;
    line-height: 1.5;
-   /* white-space: wrap; */
 }
 
 .todo-card__icons {

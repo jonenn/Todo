@@ -1,17 +1,17 @@
-.todo-card__icon svg {
+.todo-card__icon--delete svg {
    transition: transform 0.5s ease;
    transform-origin: center;
 }
 
-.todo-card__icon svg:hover {
+.todo-card__icon--delete:hover {
    animation: trash 0.6s linear forwards;
 }
 
-.todo-card__icon svg:hover .delete_svg__trash-cap {
+.todo-card__icon--delete:hover .delete_svg__trash-cap {
    animation: rotate 0.6s linear forwards;
 }
 
-.todo-card__icon svg:hover .delete_svg__trash-can {
+.todo-card__icon--delete:hover .delete_svg__trash-can {
    animation: can 0.6s linear forwards;
 }
 
@@ -63,18 +63,18 @@
 
 @keyframes trash {
    0% {
-      transform: translateX(0);
+      transform: translate(0);
    }
 
    25% {
-      transform: translateX(-1px);
+      transform: translate(-1px, -3px);
    }
 
    50% {
-      transform: translateX(1px);
+      transform: translate(1px, 3px);
    }
 
    100% {
-      transform: translateX(0);
+      transform: translate(0);
    }
 }
