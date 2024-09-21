@@ -6,6 +6,7 @@ import { ReactComponent as Search } from '../../../assets/search.svg';
 import { ReactComponent as Approve } from '../../../assets/approve.svg';
 import { ReactComponent as Create } from '../../../assets/create.svg';
 import { ReactComponent as List } from '../../../assets/list.svg';
+import './Icon.css';
 
 const Icon = ({ color, size, onClick, type, className }) => {
    const iconList = {

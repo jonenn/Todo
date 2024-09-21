@@ -50,6 +50,7 @@
    /* border-radius: 100%; */
    /* border: 2px solid var(--green); */
    cursor: pointer;
+   overflow: visible;
 }
 
 .todo-card__icon--save svg {

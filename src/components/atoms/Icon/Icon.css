@@ -1,0 +1,80 @@
+.todo-card__icon svg {
+   transition: transform 0.5s ease;
+   transform-origin: center;
+}
+
+.todo-card__icon svg:hover {
+   animation: trash 0.6s linear forwards;
+}
+
+.todo-card__icon svg:hover .delete_svg__trash-cap {
+   animation: rotate 0.6s linear forwards;
+}
+
+.todo-card__icon svg:hover .delete_svg__trash-can {
+   animation: can 0.6s linear forwards;
+}
+
+.delete_svg__trash-cap {
+   transition: transform 0.5s ease;
+   transform-origin: top right;
+}
+
+.delete_svg__trash-can {
+   transition: transform 0.5s ease;
+   transform-origin: center;
+}
+
+@keyframes rotate {
+   0% {
+      transform: rotate(21deg);
+   }
+
+   25% {
+      transform: translateY(-6px) translateX(3px);
+   }
+
+   50% {
+      transform: rotate(12deg);
+   }
+
+   100% {
+      transform: rotate(0) translateY(0);
+   }
+}
+
+@keyframes can {
+   0% {
+      transform: rotate(-24deg) translateY(-1px);
+   }
+
+   25% {
+      transform: translateY(-6px);
+   }
+
+   50% {
+      transform: rotate(12deg) translateY(-1px);
+   }
+
+   100% {
+      transform: rotate(0) translateY(0);
+   }
+}
+
+@keyframes trash {
+   0% {
+      transform: translateX(0);
+   }
+
+   25% {
+      transform: translateX(-1px);
+   }
+
+   50% {
+      transform: translateX(1px);
+   }
+
+   100% {
+      transform: translateX(0);
+   }
+}
