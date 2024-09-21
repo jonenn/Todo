@@ -6,6 +6,8 @@
    font-weight: 300;
    background-color: unset;
    width: 100%;
+   resize: none;
+   overflow: hidden;
 }
 
 .input-bar:focus {

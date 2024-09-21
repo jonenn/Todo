@@ -12,16 +12,23 @@
 }
 
 .todo-card--unchecked {
-   background-color: var(--white-bg);
+   background-color: var(--white-bg-solid);
 }
 
 .todo-card__name {
    font-size: 1.5rem;
    font-weight: 300;
+   /* word-break: break-all; */
+   overflow-wrap: break-word;
+   white-space: normal;
+   hyphens: auto;
+   margin: 1.2rem 0;
+   line-height: 1.5;
 }
 
 .todo-card__name--unchecked {
    text-decoration: none;
+   max-width: 70%;
 }
 
 .todo-card__name--checked {
@@ -45,7 +52,7 @@
    cursor: pointer;
 }
 
-.todo-card__icon--save img {
+.todo-card__icon--save svg {
    --icon-size--save: 1.2rem;
    height: var(--icon-size--save);
    width: var(--icon-size--save);
@@ -55,6 +62,8 @@
    align-items: center;
    aspect-ratio: 1 / 1;
    overflow: visible;
+   padding: 0.21rem;
+   box-sizing: content-box;
 }
 
 .todo-card__content {
@@ -87,18 +96,17 @@
    field-sizing: content;
    -webkit-field-sizing: content;
    display: block;
-   margin-block-start: 1em;
-   margin-block-end: 1em;
-   margin-inline-start: 0px;
-   margin-inline-end: 0px;
+   margin: 1.2rem 0;
    unicode-bidi: isolate;
    padding: 0;
    word-wrap: break-word;
    overflow-wrap: break-word;
+   line-height: 1.5;
    /* white-space: wrap; */
 }
 
 .todo-card__icons {
    display: flex;
    gap: 1.17rem;
+   max-width: 30%;
 }

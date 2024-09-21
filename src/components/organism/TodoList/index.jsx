@@ -18,7 +18,6 @@ const TodoList = ({
    const [isAtBottom, setIsAtBottom] = useState(false);
    const [isAtTop, setIsAtTop] = useState(false);
    const [isMiddle, setIsMiddle] = useState(false);
-   const [addTodo, setAddTodo] = useState('');
 
    useEffect(() => {
       const handleScroll = () => {
@@ -97,7 +96,6 @@ const TodoList = ({
                   </TodoCard>
                ))
             )}
-            {console.log(todos.length === 0)}
          </div>
          <InteractionBar
             placeholder="Add a Task"
