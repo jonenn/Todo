@@ -19,6 +19,7 @@
       rgba(0, 0, 0, 1) 90%,
       rgba(0, 0, 0, 0) 100%
    );
+   flex: 1;
 }
 
 .lists__items::-webkit-scrollbar {
@@ -57,8 +58,8 @@
 .lists__add {
    margin-top: 1.5rem;
    margin-bottom: 0;
-   min-height: max-content;
-   padding: 0.81rem 1.8rem;
+   /* height: 100%; */
+   /* min-height: max-content; */
    /* min-height: 100%; */
    /* padding: 0.9rem 0; */
 }
