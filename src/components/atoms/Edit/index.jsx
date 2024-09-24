@@ -6,9 +6,9 @@ const Edit = ({ onEdit, text }) => {
    };
    return (
       <>
-         <div className="todo-card__icon">
-            <Icon type="edit" alt="" onClick={() => handleClick()} />
-         </div>
+         <button className="todo-card__icon" onClick={handleClick}>
+            <Icon type="edit" alt="" />
+         </button>
       </>
    );
 };

@@ -5,12 +5,12 @@ const Delete = ({ onDelete, text }) => {
       onDelete(text);
    };
    return (
-      <div
+      <button
          className="todo-card__icon todo-card__icon--delete"
-         onClick={() => handleClick()}
+         onClick={handleClick}
       >
          <Icon type="delete" />
-      </div>
+      </button>
    );
 };
 

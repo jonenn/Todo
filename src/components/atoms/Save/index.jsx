@@ -7,8 +7,11 @@ const Save = ({ onSave, text }) => {
    };
    return (
       <>
-         <div className="todo-card__icon todo-card__icon--save">
-            <Icon type="save" onClick={() => handleClick()} />
+         <div
+            className="todo-card__icon todo-card__icon--save"
+            onClick={handleClick}
+         >
+            <Icon type="save" />
          </div>
       </>
    );

@@ -11,21 +11,19 @@ const Checked = ({ onCheckChange, checked, onComplete, text }) => {
       onComplete(text, newCheckState);
    };
    return (
-      <div
-         className={`check ${
-            isCheckedChild ? 'check--checked' : 'check--unchecked'
+      <button
+         className={`check check${
+            isCheckedChild ? '--checked' : '--unchecked'
          } `}
-         onClick={() => isItChecked()}
+         onClick={isItChecked}
       >
          <Icon
             type="check"
-            className={`check__image ${
-               isCheckedChild
-                  ? 'check__image--checked'
-                  : 'check__image--unchecked'
+            className={`check__image check__image${
+               isCheckedChild ? '--checked' : '--unchecked'
             }`}
          />
-      </div>
+      </button>
    );
 };
 

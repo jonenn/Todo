@@ -19,16 +19,14 @@ const InteractionBar = ({
             type={type}
             addATodo={addATodo}
          />
-         <div
-            className={`interaction-bar__icon interaction-bar__icon--${
-               value ? 'active' : ''
+         <button
+            className={`interaction-bar__icon ${
+               value ? 'interaction-bar__icon--active' : ''
             }`}
-            onClick={() => {
-               addATodo();
-            }}
+            onClick={addATodo}
          >
             <Icon type={type} />
-         </div>
+         </button>
       </div>
    );
 };

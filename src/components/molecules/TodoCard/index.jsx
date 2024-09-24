@@ -74,8 +74,8 @@ const TodoCard = ({
 
    return (
       <div
-         className={`todo-card ${
-            isChecked ? 'todo-card--checked' : 'todo-card--unchecked'
+         className={`todo-card todo-card${
+            isChecked ? '--checked' : '--unchecked'
          }`}
       >
          <Checked
@@ -96,10 +96,8 @@ const TodoCard = ({
                />
             ) : (
                <p
-                  className={`todo-card__name ${
-                     isChecked
-                        ? 'todo-card__name--checked'
-                        : 'todo-card__name--unchecked'
+                  className={`todo-card__name todo-card__name${
+                     isChecked ? '--checked' : '--unchecked'
                   }`}
                >
                   {todoValue}

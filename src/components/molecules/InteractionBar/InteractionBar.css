@@ -25,11 +25,9 @@
    padding: 0 0.9rem;
    border-radius: 999999px;
    cursor: pointer;
+   border: none;
+   background-color: unset;
 }
-
-/* .interaction-bar__icon:hover {
-   background-color: var(--purple-opacity-2);
-} */
 
 .interaction-bar svg {
    height: 1.62rem;
