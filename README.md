@@ -48,6 +48,8 @@ This project is focused on exploring and integrating innovative concepts and tec
 
 -  CSS Animations (@keyframes): Incorporating animations to enhance interactivity and engagement within the application.
 
+-  Custom Hooks: Developing reusable hooks to encapsulate logic for state management, data fetching, and other functionalities, streamlining component code and enhancing reusability.
+
 ## Table of Contents
 
 1. [Features](#features)

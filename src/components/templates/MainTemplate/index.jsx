@@ -5,8 +5,9 @@ import { TodoList } from '../../organism/TodoList';
 import './MainTemplate.css';
 import octopus from '../../../assets/octopus.png';
 import { TodoCounter } from '../../molecules/TodoCounter';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { UserProfile } from '../../molecules/UserProfile';
+import { useLocalStorage } from '../../hooks/localStorage';
 
 const defaultTodos = [
    { text: 'Research the Company', checked: false },
@@ -22,19 +23,10 @@ const defaultTodos = [
    { text: 'Review Feedback', checked: false },
 ];
 
-const getInitialTodos = () => {
-   const parsedTodos = localStorage.getItem('todo-app-jonenn');
-   return parsedTodos ? JSON.parse(parsedTodos) : defaultTodos;
-};
-
 const MainTemplate = () => {
-   const [todos, setTodos] = useState(getInitialTodos);
+   const [todos, setTodos] = useLocalStorage('todo-app-jonenn', []);
    const [searchValue, setSearchValue] = useState('');
    const [addTodoValue, setAddTodoValue] = useState('');
-
-   useEffect(() => {
-      localStorage.setItem('todo-app-jonenn', JSON.stringify(todos));
-   }, [todos]);
 
    const checkedTodos = todos.filter((todo) => {
       return !!todo.checked;
@@ -50,13 +42,8 @@ const MainTemplate = () => {
 
    const addATodo = () => {
       const newTodos = [{ text: addTodoValue, checked: false }, ...todos];
-      saveAllTodos(newTodos);
-      console.log(newTodos);
-   };
-
-   const saveAllTodos = (newTodos) => {
-      localStorage.setItem('todo-app-jonenn', JSON.stringify(newTodos));
       setTodos(newTodos);
+      console.log(newTodos);
    };
 
    return (
@@ -90,7 +77,7 @@ const MainTemplate = () => {
                setAddTodoValue={setAddTodoValue}
                todos={todos}
                setTodos={setTodos}
-               saveAllTodos={saveAllTodos}
+               saveAllTodos={setTodos}
                addATodo={addATodo}
             />
          </div>
