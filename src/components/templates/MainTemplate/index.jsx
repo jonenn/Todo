@@ -24,7 +24,7 @@ const defaultTodos = [
 ];
 
 const MainTemplate = () => {
-   const [todos, setTodos] = useLocalStorage('todo-app-jonenn', []);
+   const [todos, setTodos] = useLocalStorage('todo-app-jonenn', defaultTodos);
    const [searchValue, setSearchValue] = useState('');
    const [addTodoValue, setAddTodoValue] = useState('');
 
@@ -41,9 +41,11 @@ const MainTemplate = () => {
    });
 
    const addATodo = () => {
-      const newTodos = [{ text: addTodoValue, checked: false }, ...todos];
-      setTodos(newTodos);
-      console.log(newTodos);
+      if (addTodoValue.trim().length > 0) {
+         const newTodos = [{ text: addTodoValue, checked: false }, ...todos];
+         setTodos(newTodos);
+      }
+      console.log(addTodoValue);
    };
 
    return (

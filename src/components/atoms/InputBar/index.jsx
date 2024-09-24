@@ -4,6 +4,7 @@ import './InputBar.css';
 const InputBar = ({ placeholder, value, setValue, addATodo, type }) => {
    const handleKeyDown = (eve) => {
       if (eve.key === 'Enter') {
+         eve.preventDefault();
          addATodo();
          setValue('');
       }
