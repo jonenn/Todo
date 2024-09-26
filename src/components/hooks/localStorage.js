@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react';
 
 const useLocalStorage = (dataName, defaultData) => {
+   const [dataState, setDataState] = useState({
+      loading: true,
+      error: null,
+   });
+
    const getInitialData = () => {
       const parsedData = localStorage.getItem(dataName);
       return parsedData ? JSON.parse(parsedData) : defaultData;
@@ -9,7 +14,12 @@ const useLocalStorage = (dataName, defaultData) => {
    const [localData, setLocalData] = useState(getInitialData);
 
    useEffect(() => {
-      localStorage.setItem(dataName, JSON.stringify(localData));
+      try {
+         localStorage.setItem(dataName, JSON.stringify(localData));
+         setDataState({ ...dataState, loading: false });
+      } catch (err) {
+         setDataState({ ...dataState, error: err.message });
+      }
    }, [localData]);
 
    const saveAllData = (newData) => {
@@ -17,7 +27,7 @@ const useLocalStorage = (dataName, defaultData) => {
       setLocalData(newData);
    };
 
-   return [localData, saveAllData];
+   return { localData, saveAllData, dataState };
 };
 
 export { useLocalStorage };

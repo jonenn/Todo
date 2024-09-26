@@ -23,7 +23,7 @@ body {
    position: relative;
    display: block;
    /* justify-content: center; */
-   background-color: hsla(225, 67%, 84%, 1);
+   background-color: #bbc9f2;
    background-image: linear-gradient(
          to top,
          rgba(255, 255, 255, 0.42),

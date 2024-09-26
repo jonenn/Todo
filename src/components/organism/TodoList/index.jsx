@@ -13,6 +13,8 @@ const TodoList = ({
    setAddTodoValue,
    saveAllTodos,
    addATodo,
+   loading,
+   error,
 }) => {
    const listRef = useRef(null);
    const [isAtBottom, setIsAtBottom] = useState(false);
@@ -75,6 +77,9 @@ const TodoList = ({
                WebkitMaskImage: maskStyle,
             }}
          >
+            {loading && <p>Loading</p>}
+            {error && <p>There was an error loading your data: {error}</p>}
+
             {todos.length === 0 ? (
                <p className="no-todos">Create your first task!</p>
             ) : searchedTodos.length === 0 ? (

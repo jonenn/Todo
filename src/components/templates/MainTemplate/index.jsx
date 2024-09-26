@@ -24,7 +24,11 @@ const defaultTodos = [
 ];
 
 const MainTemplate = () => {
-   const [todos, setTodos] = useLocalStorage('todo-app-jonenn', defaultTodos);
+   const {
+      localData: todos,
+      saveAllData: setTodos,
+      dataState,
+   } = useLocalStorage('todo-app-jonenn', defaultTodos);
    const [searchValue, setSearchValue] = useState('');
    const [addTodoValue, setAddTodoValue] = useState('');
 
@@ -81,6 +85,8 @@ const MainTemplate = () => {
                setTodos={setTodos}
                saveAllTodos={setTodos}
                addATodo={addATodo}
+               loading={dataState.loading}
+               error={dataState.error}
             />
          </div>
       </>
