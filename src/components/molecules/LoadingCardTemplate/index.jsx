@@ -1,5 +1,5 @@
 import './LoadingCardTemplate.css';
-import { LoadingCard } from '../../atoms/LoadingCard';
+import { LoadingCard } from '../../organism/LoadingCard';
 
 const LoadingCardTemplate = () => {
    return (

@@ -14,13 +14,15 @@ const useLocalStorage = (dataName, defaultData) => {
    const [localData, setLocalData] = useState(getInitialData);
 
    useEffect(() => {
-      try {
-         localStorage.setItem(dataName, JSON.stringify(localData));
-         setDataState({ ...dataState, loading: false });
-      } catch (err) {
-         setDataState({ loading: false, error: true });
-         console.log(err);
-      }
+      setTimeout(() => {
+         try {
+            localStorage.setItem(dataName, JSON.stringify(localData));
+            setDataState({ ...dataState, loading: false });
+         } catch (err) {
+            setDataState({ loading: false, error: true });
+            console.log(err);
+         }
+      }, 3000);
    }, [localData]);
 
    const saveAllData = (newData) => {
