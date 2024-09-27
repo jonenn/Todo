@@ -1,0 +1,7 @@
+.todo-card__loading--template {
+   display: inherit;
+   flex-direction: inherit;
+   overflow: hidden;
+   flex: 1;
+   gap: inherit;
+}

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const useLocalStorage = (dataName, defaultData) => {
    const [dataState, setDataState] = useState({
       loading: true,
-      error: null,
+      error: false,
    });
 
    const getInitialData = () => {
@@ -18,7 +18,8 @@ const useLocalStorage = (dataName, defaultData) => {
          localStorage.setItem(dataName, JSON.stringify(localData));
          setDataState({ ...dataState, loading: false });
       } catch (err) {
-         setDataState({ ...dataState, error: err.message });
+         setDataState({ loading: false, error: true });
+         console.log(err);
       }
    }, [localData]);
 

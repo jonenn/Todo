@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { InteractionBar } from '../../molecules/InteractionBar';
 import { TodoCard } from '../../molecules/TodoCard';
 import './TodoList.css';
+import { LoadingCardTemplate } from '../../molecules/LoadingCardTemplate';
 
 const TodoList = ({
    searchedTodos,
@@ -77,16 +78,17 @@ const TodoList = ({
                WebkitMaskImage: maskStyle,
             }}
          >
-            {loading && <p>Loading</p>}
+            {loading && <LoadingCardTemplate />}
             {error && <p>There was an error loading your data: {error}</p>}
 
-            {todos.length === 0 ? (
+            {!todos.length ? (
                <p className="no-todos">Create your first task!</p>
-            ) : searchedTodos.length === 0 ? (
+            ) : !searchedTodos.length ? (
                <p className="no-todos no-results">
                   No results found. Try a different search term.
                </p>
             ) : (
+               !loading &&
                searchedTodos.map((todo) => (
                   <TodoCard
                      key={todo.text}
