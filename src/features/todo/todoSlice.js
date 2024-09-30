@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { defaultTodos } from '../../data/defaultTodos';
+import { getDefaultData, saveData } from '../../utils/localStorage';
 
 const initialState = {
-   todoItems: defaultTodos,
+   todoItems: getDefaultData('todo-app-jonenn', defaultTodos),
    editingId: null,
    loading: true,
 };
@@ -15,11 +16,14 @@ const todoSlice = createSlice({
          const todos = state.todoItems;
          const { id, checkState } = action.payload;
          todos[id].checked = checkState;
+         saveData('todo-app-jonenn', todos);
       },
       deleteATodo: (state, action) => {
          const todos = state.todoItems;
          const { id } = action.payload;
          todos.splice(id, 1);
+         saveData('todo-app-jonenn', todos);
+         state.editingId = null;
       },
       editATodo: (state, action) => {
          state.editingId = action.payload.id;
@@ -29,6 +33,7 @@ const todoSlice = createSlice({
          const todos = state.todoItems;
          const { id, todoValue } = action.payload;
          todos[id].text = todoValue;
+         saveData('todo-app-jonenn', todos);
          state.editingId = null;
       },
       addATask: (state, action) => {
@@ -36,6 +41,7 @@ const todoSlice = createSlice({
          const { addTodoValue } = action.payload;
          if (addTodoValue.trim().length > 0) {
             todos.unshift({ text: addTodoValue, checked: false });
+            saveData('todo-app-jonenn', todos);
          }
       },
    },
