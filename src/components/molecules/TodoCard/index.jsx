@@ -20,7 +20,7 @@ const TodoCard = ({
       return todo.text === text;
    });
 
-   const { todoItems } = useSelector((state) => {
+   const { todoItems, editingId } = useSelector((state) => {
       return state.todos;
    });
 
@@ -35,9 +35,9 @@ const TodoCard = ({
       }
    };
 
-   const editATodo = () => {
-      setEditing(true);
-   };
+   // const editATodo = () => {
+   //    setEditing(true);
+   // };
 
    const editValue = (eve) => {
       setTodoValue(eve.target.value);
@@ -67,7 +67,7 @@ const TodoCard = ({
             id={todoIndex}
          />
          <div className="todo-card__content">
-            {editing ? (
+            {editingId === todoIndex ? (
                <TextareaAutosize
                   className="todo-card__input"
                   value={todoValue}
@@ -86,10 +86,10 @@ const TodoCard = ({
                </p>
             )}
             <div className="todo-card__icons">
-               {editing ? (
+               {editingId === todoIndex ? (
                   <Save onSave={saveATodo} text={text} />
                ) : (
-                  <Edit onEdit={editATodo} />
+                  <Edit id={todoIndex} />
                )}
                <Delete id={todoIndex} />
             </div>

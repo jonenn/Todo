@@ -3,6 +3,7 @@ import { defaultTodos } from '../../data/defaultTodos';
 
 const initialState = {
    todoItems: defaultTodos,
+   editingId: null,
    loading: true,
 };
 
@@ -13,7 +14,6 @@ const todoSlice = createSlice({
       checkATodo: (state, action) => {
          const todos = state.todoItems;
          const { checkState, id } = action.payload;
-         // console.log(action.payload.id);
          todos[id] = { ...todos[id], checked: checkState };
       },
       deleteATodo: (state, action) => {
@@ -21,10 +21,14 @@ const todoSlice = createSlice({
          const { id } = action.payload;
          todos.splice(id, 1);
       },
+      editATodo: (state, action) => {
+         state.editingId = action.payload.id;
+         console.log(action.payload.id);
+      },
    },
 });
 
 // console.log(todoSlice);
 
-export const { checkATodo, deleteATodo } = todoSlice.actions;
+export const { checkATodo, deleteATodo, editATodo } = todoSlice.actions;
 export default todoSlice.reducer;

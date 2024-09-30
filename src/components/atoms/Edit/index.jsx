@@ -1,8 +1,12 @@
+import { useDispatch } from 'react-redux';
 import { Icon } from '../Icon';
+import { editATodo } from '../../../features/todo/todoSlice';
 
-const Edit = ({ onEdit, text }) => {
+const Edit = ({ id }) => {
+   const dispatch = useDispatch();
+
    const handleClick = () => {
-      onEdit(text);
+      dispatch(editATodo({ id: id }));
    };
    return (
       <>
