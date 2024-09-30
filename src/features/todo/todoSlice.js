@@ -16,10 +16,15 @@ const todoSlice = createSlice({
          // console.log(action.payload.id);
          todos[id] = { ...todos[id], checked: checkState };
       },
+      deleteATodo: (state, action) => {
+         const todos = state.todoItems;
+         const { id } = action.payload;
+         todos.splice(id, 1);
+      },
    },
 });
 
 // console.log(todoSlice);
 
-export const { checkATodo } = todoSlice.actions;
+export const { checkATodo, deleteATodo } = todoSlice.actions;
 export default todoSlice.reducer;

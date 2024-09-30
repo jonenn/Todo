@@ -38,7 +38,6 @@ const MainTemplate = () => {
    const addATodo = () => {
       if (addTodoValue.trim().length > 0) {
          const newTodos = [{ text: addTodoValue, checked: false }, ...todos];
-         // setTodos(newTodos);
       }
       console.log(addTodoValue);
    };

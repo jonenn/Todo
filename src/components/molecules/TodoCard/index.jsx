@@ -5,10 +5,10 @@ import { Edit } from '../../atoms/Edit';
 import { Delete } from '../../atoms/Delete';
 import TextareaAutosize from 'react-textarea-autosize';
 import { Save } from '../../atoms/Save';
+import { useSelector } from 'react-redux';
 
 const TodoCard = ({
    children,
-   checked,
    onEdit,
    text,
    todos,
@@ -16,7 +16,15 @@ const TodoCard = ({
    addTodoValue,
    saveAllTodos,
 }) => {
-   const [isChecked, setIsChecked] = useState(checked);
+   const todoIndex = todos.findIndex((todo) => {
+      return todo.text === text;
+   });
+
+   const { todoItems } = useSelector((state) => {
+      return state.todos;
+   });
+
+   const isChecked = todoItems[todoIndex].checked;
 
    const [editing, setEditing] = useState(false);
    const [todoValue, setTodoValue] = useState(children);
@@ -25,31 +33,6 @@ const TodoCard = ({
       if (eve.key === 'Enter') {
          saveATodo();
       }
-   };
-
-   const handleClick = (whenChecked) => {
-      setIsChecked(whenChecked);
-      console.log(whenChecked, 'parent');
-   };
-
-   // const checkATodo = (text, checkState) => {
-   //    const newTodos = [...todos];
-   //    const todoIndex = newTodos.findIndex((todo) => {
-   //       return todo.text === text;
-   //    });
-   //    console.log(todoIndex);
-   //    newTodos[todoIndex] = { ...newTodos[todoIndex], checked: checkState };
-   //    setTodos(newTodos);
-   // };
-
-   const deleteATodo = (text) => {
-      const newTodos = [...todos];
-      const todoIndex = newTodos.findIndex((todo) => {
-         return todo.text === text;
-      });
-      newTodos.splice(todoIndex, 1);
-      saveAllTodos(newTodos);
-      console.log(newTodos);
    };
 
    const editATodo = () => {
@@ -72,20 +55,13 @@ const TodoCard = ({
       setEditing(false);
    };
 
-   const todoIndex = todos.findIndex((todo) => {
-      return todo.text === text;
-   });
-
    return (
       <div
          className={`todo-card todo-card${
             isChecked ? '--checked' : '--unchecked'
          }`}
       >
-         {/* {todoIndex} */}
          <Checked
-            onCheckChange={handleClick}
-            checked={checked}
             // onComplete={checkATodo}
             text={text}
             id={todoIndex}
@@ -115,7 +91,7 @@ const TodoCard = ({
                ) : (
                   <Edit onEdit={editATodo} />
                )}
-               <Delete onDelete={deleteATodo} text={text} />
+               <Delete id={todoIndex} />
             </div>
          </div>
       </div>
