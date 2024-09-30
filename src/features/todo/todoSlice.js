@@ -13,8 +13,8 @@ const todoSlice = createSlice({
    reducers: {
       checkATodo: (state, action) => {
          const todos = state.todoItems;
-         const { checkState, id } = action.payload;
-         todos[id] = { ...todos[id], checked: checkState };
+         const { id, checkState } = action.payload;
+         todos[id].checked = checkState;
       },
       deleteATodo: (state, action) => {
          const todos = state.todoItems;
@@ -25,10 +25,17 @@ const todoSlice = createSlice({
          state.editingId = action.payload.id;
          console.log(action.payload.id);
       },
+      saveATodo: (state, action) => {
+         const todos = state.todoItems;
+         const { id, todoValue } = action.payload;
+         todos[id].text = todoValue;
+         state.editingId = null;
+      },
    },
 });
 
 // console.log(todoSlice);
 
-export const { checkATodo, deleteATodo, editATodo } = todoSlice.actions;
+export const { checkATodo, deleteATodo, editATodo, saveATodo } =
+   todoSlice.actions;
 export default todoSlice.reducer;

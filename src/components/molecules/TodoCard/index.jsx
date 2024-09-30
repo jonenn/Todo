@@ -5,7 +5,8 @@ import { Edit } from '../../atoms/Edit';
 import { Delete } from '../../atoms/Delete';
 import TextareaAutosize from 'react-textarea-autosize';
 import { Save } from '../../atoms/Save';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { saveATodo } from '../../../features/todo/todoSlice';
 
 const TodoCard = ({
    children,
@@ -24,35 +25,19 @@ const TodoCard = ({
       return state.todos;
    });
 
+   const [todoValue, setTodoValue] = useState(children);
    const isChecked = todoItems[todoIndex].checked;
 
-   const [editing, setEditing] = useState(false);
-   const [todoValue, setTodoValue] = useState(children);
+   const dispatch = useDispatch();
 
    const handleKeyDown = (eve) => {
       if (eve.key === 'Enter') {
-         saveATodo();
+         dispatch(saveATodo({ id: todoIndex, todoValue: todoValue }));
       }
    };
 
-   // const editATodo = () => {
-   //    setEditing(true);
-   // };
-
    const editValue = (eve) => {
       setTodoValue(eve.target.value);
-   };
-
-   const saveATodo = () => {
-      const newTodos = [...todos];
-      const todoIndex = newTodos.findIndex((todo) => {
-         return todo.text === text;
-      });
-      console.log(todoIndex);
-      newTodos[todoIndex] = { ...newTodos[todoIndex], text: todoValue };
-      saveAllTodos(newTodos);
-      console.log(newTodos);
-      setEditing(false);
    };
 
    return (
@@ -87,7 +72,7 @@ const TodoCard = ({
             )}
             <div className="todo-card__icons">
                {editingId === todoIndex ? (
-                  <Save onSave={saveATodo} text={text} />
+                  <Save id={todoIndex} value={todoValue} />
                ) : (
                   <Edit id={todoIndex} />
                )}

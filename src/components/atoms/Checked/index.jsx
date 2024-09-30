@@ -10,7 +10,7 @@ const Checked = ({ onCheckChange, checked, onComplete, text, id }) => {
    const isItChecked = () => {
       const newCheckState = !isChecked;
       setIsChecked(newCheckState);
-      dispatch(checkATodo({ checkState: newCheckState, id: id }));
+      dispatch(checkATodo({ id: id, checkState: newCheckState }));
       // onCheckChange(newCheckState);
       // onComplete(text, newCheckState);
    };

@@ -1,9 +1,11 @@
+import { useDispatch } from 'react-redux';
 import { Icon } from '../Icon';
+import { saveATodo } from '../../../features/todo/todoSlice';
 
-const Save = ({ onSave, text }) => {
+const Save = ({ id, value }) => {
+   const dispatch = useDispatch();
    const handleClick = () => {
-      onSave();
-      console.log('saved');
+      dispatch(saveATodo({ id: id, todoValue: value }));
    };
    return (
       <>
