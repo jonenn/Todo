@@ -32,15 +32,15 @@ const TodoCard = ({
       console.log(whenChecked, 'parent');
    };
 
-   const checkATodo = (text, checkState) => {
-      const newTodos = [...todos];
-      const todoIndex = newTodos.findIndex((todo) => {
-         return todo.text === text;
-      });
-      console.log(todoIndex);
-      newTodos[todoIndex] = { ...newTodos[todoIndex], checked: checkState };
-      setTodos(newTodos);
-   };
+   // const checkATodo = (text, checkState) => {
+   //    const newTodos = [...todos];
+   //    const todoIndex = newTodos.findIndex((todo) => {
+   //       return todo.text === text;
+   //    });
+   //    console.log(todoIndex);
+   //    newTodos[todoIndex] = { ...newTodos[todoIndex], checked: checkState };
+   //    setTodos(newTodos);
+   // };
 
    const deleteATodo = (text) => {
       const newTodos = [...todos];
@@ -72,17 +72,23 @@ const TodoCard = ({
       setEditing(false);
    };
 
+   const todoIndex = todos.findIndex((todo) => {
+      return todo.text === text;
+   });
+
    return (
       <div
          className={`todo-card todo-card${
             isChecked ? '--checked' : '--unchecked'
          }`}
       >
+         {/* {todoIndex} */}
          <Checked
             onCheckChange={handleClick}
             checked={checked}
-            onComplete={checkATodo}
+            // onComplete={checkATodo}
             text={text}
+            id={todoIndex}
          />
          <div className="todo-card__content">
             {editing ? (

@@ -1,26 +1,30 @@
 import './Checked.css';
 import { useState } from 'react';
 import { Icon } from '../Icon';
+import { useDispatch } from 'react-redux';
+import { checkATodo } from '../../../features/todo/todoSlice.js';
 
-const Checked = ({ onCheckChange, checked, onComplete, text }) => {
-   const [isCheckedChild, setIsCheckedChild] = useState(checked);
+const Checked = ({ onCheckChange, checked, onComplete, text, id }) => {
+   const [isChecked, setIsChecked] = useState(checked);
+
    const isItChecked = () => {
-      const newCheckState = !isCheckedChild;
-      setIsCheckedChild(newCheckState);
-      onCheckChange(newCheckState);
-      onComplete(text, newCheckState);
+      const newCheckState = !isChecked;
+      setIsChecked(newCheckState);
+      dispatch(checkATodo({ checkState: newCheckState, id: id }));
+      // onCheckChange(newCheckState);
+      // onComplete(text, newCheckState);
    };
+
+   const dispatch = useDispatch();
    return (
       <button
-         className={`check check${
-            isCheckedChild ? '--checked' : '--unchecked'
-         } `}
+         className={`check check${isChecked ? '--checked' : '--unchecked'} `}
          onClick={isItChecked}
       >
          <Icon
             type="check"
             className={`check__image check__image${
-               isCheckedChild ? '--checked' : '--unchecked'
+               isChecked ? '--checked' : '--unchecked'
             }`}
          />
       </button>

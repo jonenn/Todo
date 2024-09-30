@@ -1,5 +1,5 @@
 const defaultTodos = [
-   { text: 'Research the Company', checked: false },
+   { text: 'Researching the Company', checked: false },
    { text: 'Review the Job Description', checked: false },
    { text: 'Prepare Your Elevator Pitch', checked: false },
    { text: 'Highlight Key Achievements', checked: false },

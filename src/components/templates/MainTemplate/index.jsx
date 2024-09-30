@@ -7,19 +7,19 @@ import octopus from '../../../assets/octopus.png';
 import { TodoCounter } from '../../molecules/TodoCounter';
 import { useState } from 'react';
 import { UserProfile } from '../../molecules/UserProfile';
-import { useLocalStorage } from '../../../hooks/localStorage';
+// import { useLocalStorage } from '../../../hooks/localStorage';
 import { useSelector } from 'react-redux';
 
 const MainTemplate = () => {
-   const { defaultTodos } = useSelector((store) => {
-      return store.todo;
+   const { todoItems: todos } = useSelector((store) => {
+      return store.todos;
    });
 
-   const {
-      localData: todos,
-      saveAllData: setTodos,
-      dataState,
-   } = useLocalStorage('todo-app-jonenn', defaultTodos);
+   // const {
+   //    localData: todos,
+   //    saveAllData: setTodos,
+   //    dataState,
+   // } = useLocalStorage('todo-app-jonenn', defaultTodos);
    const [searchValue, setSearchValue] = useState('');
    const [addTodoValue, setAddTodoValue] = useState('');
 
@@ -38,7 +38,7 @@ const MainTemplate = () => {
    const addATodo = () => {
       if (addTodoValue.trim().length > 0) {
          const newTodos = [{ text: addTodoValue, checked: false }, ...todos];
-         setTodos(newTodos);
+         // setTodos(newTodos);
       }
       console.log(addTodoValue);
    };
@@ -73,11 +73,11 @@ const MainTemplate = () => {
                addTodoValue={addTodoValue}
                setAddTodoValue={setAddTodoValue}
                todos={todos}
-               setTodos={setTodos}
-               saveAllTodos={setTodos}
+               // setTodos={setTodos}
+               // saveAllTodos={setTodos}
                addATodo={addATodo}
-               loading={dataState.loading}
-               error={dataState.error}
+               // loading={dataState.loading}
+               // error={dataState.error}
             />
          </div>
       </>

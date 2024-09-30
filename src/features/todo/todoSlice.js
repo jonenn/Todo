@@ -2,15 +2,24 @@ import { createSlice } from '@reduxjs/toolkit';
 import { defaultTodos } from '../../data/defaultTodos';
 
 const initialState = {
-   defaultTodos,
+   todoItems: defaultTodos,
    loading: true,
 };
 
 const todoSlice = createSlice({
-   name: 'todo',
+   name: 'todos',
    initialState,
+   reducers: {
+      checkATodo: (state, action) => {
+         const todos = state.todoItems;
+         const { checkState, id } = action.payload;
+         // console.log(action.payload.id);
+         todos[id] = { ...todos[id], checked: checkState };
+      },
+   },
 });
 
-console.log(todoSlice);
+// console.log(todoSlice);
 
+export const { checkATodo } = todoSlice.actions;
 export default todoSlice.reducer;
