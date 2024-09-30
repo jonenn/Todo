@@ -1,6 +1,9 @@
 import { InputBar } from '../../atoms/InputBar';
 import './InteractionBar.css';
 import { Icon } from '../../atoms/Icon';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addATask } from '../../../features/todo/todoSlice';
 
 const InteractionBar = ({
    placeholder,
@@ -8,22 +11,31 @@ const InteractionBar = ({
    className,
    value,
    setValue,
-   addATodo,
+   // addATodo,
 }) => {
+   const [addTodoValue, setAddTodoValue] = useState('');
+
+   const dispatch = useDispatch();
+
+   const handleClick = () => {
+      dispatch(addATask({ addTodoValue: addTodoValue }));
+      setAddTodoValue('');
+   };
+
    return (
       <div className={`interaction-bar ${className}`}>
          <InputBar
             placeholder={placeholder}
-            value={value}
-            setValue={setValue}
+            value={type === 'create' ? addTodoValue : value}
+            setValue={type === 'create' ? setAddTodoValue : setValue}
             type={type}
-            addATodo={addATodo}
+            // addATodo={addATodo}
          />
          <button
             className={`interaction-bar__icon ${
                value ? 'interaction-bar__icon--active' : ''
             }`}
-            onClick={addATodo}
+            onClick={handleClick}
          >
             <Icon type={type} />
          </button>

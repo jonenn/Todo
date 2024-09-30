@@ -31,11 +31,16 @@ const todoSlice = createSlice({
          todos[id].text = todoValue;
          state.editingId = null;
       },
+      addATask: (state, action) => {
+         let todos = state.todoItems;
+         const { addTodoValue } = action.payload;
+         if (addTodoValue.trim().length > 0) {
+            todos.unshift({ text: addTodoValue, checked: false });
+         }
+      },
    },
 });
 
-// console.log(todoSlice);
-
-export const { checkATodo, deleteATodo, editATodo, saveATodo } =
+export const { checkATodo, deleteATodo, editATodo, saveATodo, addATask } =
    todoSlice.actions;
 export default todoSlice.reducer;

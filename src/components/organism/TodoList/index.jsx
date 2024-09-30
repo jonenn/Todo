@@ -10,8 +10,6 @@ const TodoList = ({
    setSearchValue,
    todos,
    setTodos,
-   addTodoValue,
-   setAddTodoValue,
    saveAllTodos,
    addATodo,
    loading,
@@ -96,7 +94,7 @@ const TodoList = ({
                      text={todo.text}
                      todos={todos}
                      setTodos={setTodos}
-                     addTodoValue={addTodoValue}
+                     // addTodoValue={addTodoValue}
                      saveAllTodos={saveAllTodos}
                   >
                      {todo.text}
@@ -108,9 +106,9 @@ const TodoList = ({
             placeholder="Add a Task"
             type="create"
             className="lists__add"
-            value={addTodoValue}
-            setValue={setAddTodoValue}
-            addATodo={addATodo}
+            // value={addTodoValue}
+            // setValue={setAddTodoValue}
+            // addATodo={addATodo}
          />
       </div>
    );

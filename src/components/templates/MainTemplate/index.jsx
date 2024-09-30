@@ -21,7 +21,6 @@ const MainTemplate = () => {
    //    dataState,
    // } = useLocalStorage('todo-app-jonenn', defaultTodos);
    const [searchValue, setSearchValue] = useState('');
-   const [addTodoValue, setAddTodoValue] = useState('');
 
    const checkedTodos = todos.filter((todo) => {
       return !!todo.checked;
@@ -34,13 +33,6 @@ const MainTemplate = () => {
       const inputText = searchValue.toLowerCase();
       return todoText.includes(inputText);
    });
-
-   const addATodo = () => {
-      if (addTodoValue.trim().length > 0) {
-         const newTodos = [{ text: addTodoValue, checked: false }, ...todos];
-      }
-      console.log(addTodoValue);
-   };
 
    return (
       <>
@@ -69,12 +61,12 @@ const MainTemplate = () => {
                searchedTodos={searchedTodos}
                searchValue={searchValue}
                setSearchValue={setSearchValue}
-               addTodoValue={addTodoValue}
-               setAddTodoValue={setAddTodoValue}
+               // addTodoValue={addTodoValue}
+               // setAddTodoValue={setAddTodoValue}
                todos={todos}
                // setTodos={setTodos}
                // saveAllTodos={setTodos}
-               addATodo={addATodo}
+               // addATodo={addATodo}
                // loading={dataState.loading}
                // error={dataState.error}
             />

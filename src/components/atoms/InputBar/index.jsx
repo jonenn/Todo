@@ -1,11 +1,15 @@
 import ReactTextareaAutosize from 'react-textarea-autosize';
 import './InputBar.css';
+import { useDispatch } from 'react-redux';
+import { addATask } from '../../../features/todo/todoSlice';
 
-const InputBar = ({ placeholder, value, setValue, addATodo, type }) => {
+const InputBar = ({ placeholder, value, setValue, type }) => {
+   const dispatch = useDispatch();
+
    const handleKeyDown = (eve) => {
       if (eve.key === 'Enter') {
          eve.preventDefault();
-         addATodo();
+         dispatch(addATask({ addTodoValue: value }));
          setValue('');
       }
    };
@@ -31,7 +35,6 @@ const InputBar = ({ placeholder, value, setValue, addATodo, type }) => {
          className="input-bar"
          maxLength="200"
          value={value}
-         // maxRows={type === 'search' ? 1 : 7}
          onChange={(eve) => {
             setValue(eve.target.value);
          }}
