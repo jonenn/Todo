@@ -7,7 +7,6 @@ import octopus from '../../../assets/octopus.png';
 import { TodoCounter } from '../../molecules/TodoCounter';
 import { useState } from 'react';
 import { UserProfile } from '../../molecules/UserProfile';
-// import { useLocalStorage } from '../../../hooks/localStorage';
 import { useSelector } from 'react-redux';
 
 const MainTemplate = () => {
@@ -15,11 +14,6 @@ const MainTemplate = () => {
       return store.todos;
    });
 
-   // const {
-   //    localData: todos,
-   //    saveAllData: setTodos,
-   //    dataState,
-   // } = useLocalStorage('todo-app-jonenn', defaultTodos);
    const [searchValue, setSearchValue] = useState('');
 
    const checkedTodos = todos.filter((todo) => {
@@ -61,14 +55,7 @@ const MainTemplate = () => {
                searchedTodos={searchedTodos}
                searchValue={searchValue}
                setSearchValue={setSearchValue}
-               // addTodoValue={addTodoValue}
-               // setAddTodoValue={setAddTodoValue}
                todos={todos}
-               // setTodos={setTodos}
-               // saveAllTodos={setTodos}
-               // addATodo={addATodo}
-               // loading={dataState.loading}
-               // error={dataState.error}
             />
          </div>
       </>

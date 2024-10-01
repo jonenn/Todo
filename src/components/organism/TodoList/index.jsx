@@ -9,9 +9,6 @@ const TodoList = ({
    searchValue,
    setSearchValue,
    todos,
-   setTodos,
-   saveAllTodos,
-   addATodo,
    loading,
    error,
 }) => {
@@ -63,7 +60,6 @@ const TodoList = ({
    return (
       <div className="lists">
          <InteractionBar
-            placeholder="Search..."
             type="search"
             value={searchValue}
             setValue={setSearchValue}
@@ -88,28 +84,13 @@ const TodoList = ({
             ) : (
                !loading &&
                searchedTodos.map((todo) => (
-                  <TodoCard
-                     key={todo.text}
-                     checked={todo.checked}
-                     text={todo.text}
-                     todos={todos}
-                     setTodos={setTodos}
-                     // addTodoValue={addTodoValue}
-                     saveAllTodos={saveAllTodos}
-                  >
+                  <TodoCard key={todo.text} text={todo.text} todos={todos}>
                      {todo.text}
                   </TodoCard>
                ))
             )}
          </div>
-         <InteractionBar
-            placeholder="Add a Task"
-            type="create"
-            className="lists__add"
-            // value={addTodoValue}
-            // setValue={setAddTodoValue}
-            // addATodo={addATodo}
-         />
+         <InteractionBar type="create" className="lists__add" />
       </div>
    );
 };

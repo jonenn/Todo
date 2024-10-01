@@ -8,15 +8,7 @@ import { Save } from '../../atoms/Save';
 import { useDispatch, useSelector } from 'react-redux';
 import { saveATodo } from '../../../features/todo/todoSlice';
 
-const TodoCard = ({
-   children,
-   onEdit,
-   text,
-   todos,
-   setTodos,
-   addTodoValue,
-   saveAllTodos,
-}) => {
+const TodoCard = ({ children, text, todos }) => {
    const todoIndex = todos.findIndex((todo) => {
       return todo.text === text;
    });
@@ -46,11 +38,7 @@ const TodoCard = ({
             isChecked ? '--checked' : '--unchecked'
          }`}
       >
-         <Checked
-            // onComplete={checkATodo}
-            text={text}
-            id={todoIndex}
-         />
+         <Checked text={text} id={todoIndex} />
          <div className="todo-card__content">
             {editingId === todoIndex ? (
                <TextareaAutosize

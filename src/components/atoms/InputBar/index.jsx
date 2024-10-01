@@ -3,7 +3,7 @@ import './InputBar.css';
 import { useDispatch } from 'react-redux';
 import { addATask } from '../../../features/todo/todoSlice';
 
-const InputBar = ({ placeholder, value, setValue, type }) => {
+const InputBar = ({ value, setValue, type }) => {
    const dispatch = useDispatch();
 
    const handleKeyDown = (eve) => {
@@ -16,7 +16,7 @@ const InputBar = ({ placeholder, value, setValue, type }) => {
    return type === 'create' ? (
       <ReactTextareaAutosize
          type="text"
-         placeholder={placeholder}
+         placeholder="Add a Task"
          className="input-bar"
          maxLength="200"
          value={value}
@@ -31,7 +31,7 @@ const InputBar = ({ placeholder, value, setValue, type }) => {
    ) : (
       <input
          type="text"
-         placeholder={placeholder}
+         placeholder="Search..."
          className="input-bar"
          maxLength="200"
          value={value}

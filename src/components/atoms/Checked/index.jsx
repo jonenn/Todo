@@ -1,5 +1,4 @@
 import './Checked.css';
-import { useState } from 'react';
 import { Icon } from '../Icon';
 import { useDispatch, useSelector } from 'react-redux';
 import { checkATodo } from '../../../features/todo/todoSlice.js';

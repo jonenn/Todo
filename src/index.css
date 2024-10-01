@@ -29,21 +29,21 @@ body {
          rgba(255, 255, 255, 0.42),
          rgba(255, 255, 255, 0.42)
       ),
-      radial-gradient(at 59% 75%, hsla(241, 80%, 74%, 1) 0px, transparent 50%),
+      radial-gradient(at 59% 75%, hsla(241, 80%, 74%, 1) 0px, transparent 60%),
       radial-gradient(
          at 27% 12%,
          hsla(309, 83%, 71%, 0.71) 0px,
-         transparent 50%
+         transparent 60%
       ),
       radial-gradient(
          at 40% 43%,
          hsla(225, 67%, 85%, 0.42) 0px,
-         transparent 50%
+         transparent 60%
       ),
-      radial-gradient(at 12% 10%, hsla(241, 80%, 74%, 1) 0px, transparent 50%),
-      radial-gradient(at 52% 64%, hsla(251, 83%, 71%, 1) 0px, transparent 50%),
-      radial-gradient(at 82% 45%, hsla(252, 83%, 71%, 1) 0px, transparent 50%),
-      radial-gradient(at 4% 71%, hsla(220, 83%, 71%, 1) 0px, transparent 50%);
+      radial-gradient(at 12% 10%, hsla(241, 80%, 74%, 1) 0px, transparent 60%),
+      radial-gradient(at 52% 64%, hsla(251, 83%, 71%, 1) 0px, transparent 60%),
+      radial-gradient(at 82% 45%, hsla(252, 83%, 71%, 1) 0px, transparent 60%),
+      radial-gradient(at 4% 71%, hsla(220, 83%, 71%, 1) 0px, transparent 60%);
    background-size: cover, cover;
    background-attachment: fixed;
    background-repeat: no-repeat;
