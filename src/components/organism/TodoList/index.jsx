@@ -4,20 +4,20 @@ import { TodoCard } from '../../molecules/TodoCard';
 import './TodoList.css';
 import { LoadingCardTemplate } from '../../molecules/LoadingCardTemplate';
 
-const TodoList = ({
-   searchedTodos,
-   searchValue,
-   setSearchValue,
-   todos,
-   loading,
-   error,
-}) => {
+const TodoList = ({ searchedTodos, searchValue, setSearchValue, todos }) => {
    const listRef = useRef(null);
    const [isAtBottom, setIsAtBottom] = useState(false);
    const [isAtTop, setIsAtTop] = useState(false);
    const [isMiddle, setIsMiddle] = useState(false);
+   const [loading, setLoading] = useState(true);
+   const [error, setError] = useState(false);
 
    useEffect(() => {
+      setTimeout(() => {
+         setLoading(false);
+         setError(false);
+      }, 900);
+
       const handleScroll = () => {
          const listElement = listRef.current;
          if (!listElement) return;

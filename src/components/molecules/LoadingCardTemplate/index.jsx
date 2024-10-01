@@ -4,7 +4,7 @@ import { LoadingCard } from '../../organism/LoadingCard';
 const LoadingCardTemplate = () => {
    return (
       <div className="todo-card__loading--template">
-         {[...Array(7)].map((_, index) => (
+         {[...Array(12)].map((_, index) => (
             <LoadingCard key={index} />
          ))}
       </div>

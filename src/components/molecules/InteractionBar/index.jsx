@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addATask } from '../../../features/todo/todoSlice';
 
-const InteractionBar = ({ type, value, setValue }) => {
+const InteractionBar = ({ type, value, setValue, className }) => {
    const [addTodoValue, setAddTodoValue] = useState('');
 
    const dispatch = useDispatch();
@@ -16,7 +16,7 @@ const InteractionBar = ({ type, value, setValue }) => {
    };
 
    return (
-      <div className={`interaction-bar`}>
+      <div className={`interaction-bar ${className}`}>
          <InputBar
             value={type === 'create' ? addTodoValue : value}
             setValue={type === 'create' ? setAddTodoValue : setValue}
