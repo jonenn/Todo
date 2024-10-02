@@ -2,3 +2,7 @@
    font-size: 1.5rem;
    font-weight: 300;
 }
+
+.modal__p {
+   margin-bottom: 3rem;
+}
