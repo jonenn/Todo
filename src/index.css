@@ -5,6 +5,7 @@ html {
    --white-bg-solid: rgb(231 233 249);
    --white-bg: rgba(255, 255, 255, 0.66);
    --gray-bg: rgb(205 207 226);
+   --modal-bg: rgba(175, 187, 240, 0.3);
    --p: #63616b;
 
    --green: #add7d7;
@@ -82,7 +83,6 @@ nav ul li {
 img {
    -webkit-user-drag: none;
    user-drag: none;
-   /* pointer-events: none; */
    user-select: none;
    -webkit-user-select: none;
 }

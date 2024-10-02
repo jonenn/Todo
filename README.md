@@ -50,6 +50,8 @@ This project is focused on exploring and integrating innovative concepts and tec
 
 -  Custom Hooks: Developing reusable hooks to encapsulate logic for state management, data fetching, and other functionalities, streamlining component code and enhancing reusability.
 
+-  React Portals: Utilizing portals to render components outside of their parent hierarchy, enabling flexible modal dialogs and tooltips that enhance the user experience without disrupting the DOM structure.
+
 ## Table of Contents
 
 1. [Features](#features)
