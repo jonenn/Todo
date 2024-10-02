@@ -8,6 +8,7 @@ import { TodoCounter } from '../../molecules/TodoCounter';
 import { useState } from 'react';
 import { UserProfile } from '../../molecules/UserProfile';
 import { useSelector } from 'react-redux';
+import { Separator } from '../../atoms/Separator';
 
 const MainTemplate = () => {
    const { todoItems: todos } = useSelector((store) => {
@@ -34,12 +35,12 @@ const MainTemplate = () => {
             <div className="nav__container"></div>
             <div className="nav__main">
                <H2>Lists</H2>
-               <hr className="separator" />
+               <Separator />
                <Nav />
             </div>
             <div className="nav__content">
                <img src={octopus} alt="todo-octopus" className="nav__img" />
-               <hr className="separator separator--bottom" />
+               <Separator className="separator--bottom" />
                <UserProfile></UserProfile>
             </div>
          </div>

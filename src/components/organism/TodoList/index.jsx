@@ -3,6 +3,7 @@ import { InteractionBar } from '../../molecules/InteractionBar';
 import { TodoCard } from '../../molecules/TodoCard';
 import './TodoList.css';
 import { LoadingCardTemplate } from '../../molecules/LoadingCardTemplate';
+import { Paragraph } from '../../atoms/Paragraph';
 
 const TodoList = ({ searchedTodos, searchValue, setSearchValue, todos }) => {
    const listRef = useRef(null);
@@ -73,14 +74,20 @@ const TodoList = ({ searchedTodos, searchValue, setSearchValue, todos }) => {
             }}
          >
             {loading && <LoadingCardTemplate />}
-            {error && <p>There was an error loading your data: {error}</p>}
+            {error && (
+               <Paragraph>
+                  There was an error loading your data: {error}
+               </Paragraph>
+            )}
 
             {!todos.length ? (
-               <p className="no-todos">Create your first task!</p>
+               <Paragraph className="no-todos">
+                  Create your first task!
+               </Paragraph>
             ) : !searchedTodos.length ? (
-               <p className="no-todos no-results">
+               <Paragraph className="no-todos no-results">
                   No results found. Try a different search term.
-               </p>
+               </Paragraph>
             ) : (
                !loading &&
                searchedTodos.map((todo) => (

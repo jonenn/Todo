@@ -7,6 +7,7 @@ import TextareaAutosize from 'react-textarea-autosize';
 import { Save } from '../../atoms/Save';
 import { useDispatch, useSelector } from 'react-redux';
 import { saveATodo } from '../../../features/todo/todoSlice';
+import { Paragraph } from '../../atoms/Paragraph';
 
 const TodoCard = ({ children, text, todos }) => {
    const todoIndex = todos.findIndex((todo) => {
@@ -50,13 +51,13 @@ const TodoCard = ({ children, text, todos }) => {
                   onKeyDown={handleKeyDown}
                />
             ) : (
-               <p
+               <Paragraph
                   className={`todo-card__name todo-card__name${
                      isChecked ? '--checked' : '--unchecked'
                   }`}
                >
                   {todoValue}
-               </p>
+               </Paragraph>
             )}
             <div className="todo-card__icons">
                {editingId === todoIndex ? (

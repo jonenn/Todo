@@ -1,16 +1,15 @@
+import { LCShape } from '../../atoms/LoadingCard/LCShape';
+import { LCContent } from '../../molecules/LoadingCard/LCContent';
 import './LoadingCard.css';
 
 const LoadingCard = () => {
    return (
       <div className="loading-card">
-         <div className="loading-card__shape"></div>
-         <div className="loading-card__content">
-            <div className="loading-card__subcontent"></div>
-         </div>
-
+         <LCShape />
+         <LCContent />
          <div className="loading-card__shapes-container">
-            <div className="loading-card__shape loading-card__shape--secondary"></div>
-            <div className="loading-card__shape loading-card__shape--secondary"></div>
+            <LCShape className="loading-card__shape--secondary" />
+            <LCShape className="loading-card__shape--secondary" />
          </div>
       </div>
    );

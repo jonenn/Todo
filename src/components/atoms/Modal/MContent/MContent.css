@@ -1,0 +1,19 @@
+.modal__content {
+   position: relative;
+   height: 27rem;
+   max-height: 48%;
+   width: 45rem;
+   max-width: 54%;
+   background-color: var(--white-bg-solid);
+   border-radius: 1.5rem;
+   padding: 3.6rem;
+   text-align: center;
+}
+
+.modal__title {
+   background: linear-gradient(90deg, #7784f2 41%, #77abf2 62%);
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   font-weight: 700;
+}

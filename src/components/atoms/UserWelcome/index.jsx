@@ -1,5 +1,7 @@
+import { Paragraph } from '../Paragraph';
+
 const UserWelcome = ({ nickname }) => {
-   return <p>Welcome, {nickname}!</p>;
+   return <Paragraph>Welcome, {nickname}!</Paragraph>;
 };
 
 export { UserWelcome };
