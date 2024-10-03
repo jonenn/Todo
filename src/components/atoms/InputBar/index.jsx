@@ -2,6 +2,7 @@ import ReactTextareaAutosize from 'react-textarea-autosize';
 import './InputBar.css';
 import { useDispatch } from 'react-redux';
 import { addATask } from '../../../features/todo/todoSlice';
+import { enterNickname } from '../../../features/modal/modalSlice';
 
 const InputBar = ({ value, setValue, type }) => {
    const dispatch = useDispatch();
@@ -9,10 +10,17 @@ const InputBar = ({ value, setValue, type }) => {
    const handleKeyDown = (eve) => {
       if (eve.key === 'Enter') {
          eve.preventDefault();
-         dispatch(addATask({ addTodoValue: value }));
+         type === 'approve'
+            ? dispatch(enterNickname({ nickname: value }))
+            : dispatch(addATask({ addTodoValue: value }));
          setValue('');
       }
    };
+
+   const handleChange = (eve) => {
+      setValue(eve.target.value);
+   };
+
    return type === 'create' ? (
       <ReactTextareaAutosize
          type="text"
@@ -31,12 +39,12 @@ const InputBar = ({ value, setValue, type }) => {
    ) : (
       <input
          type="text"
-         placeholder="Search..."
+         placeholder={type === 'search' ? 'Search...' : 'Your nickname'}
          className="input-bar"
          maxLength="200"
          value={value}
          onChange={(eve) => {
-            setValue(eve.target.value);
+            handleChange(eve);
          }}
          onKeyDown={(eve) => {
             handleKeyDown(eve);

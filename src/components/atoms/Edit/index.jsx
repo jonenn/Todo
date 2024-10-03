@@ -11,7 +11,7 @@ const Edit = ({ id }) => {
    return (
       <>
          <button className="todo-card__icon" onClick={handleClick}>
-            <Icon type="edit" alt="" />
+            <Icon type="edit" />
          </button>
       </>
    );

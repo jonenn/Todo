@@ -6,11 +6,12 @@
    max-width: 54%;
    background-color: var(--white-bg-solid);
    border-radius: 1.5rem;
-   padding: 3.6rem;
+   padding: 3.6rem 4.8rem;
    text-align: center;
    display: flex;
    flex-direction: column;
    justify-content: center;
+   box-shadow: 0px 0px 18px 0px rgba(0, 0, 0, 0.06);
 }
 
 .modal__title {

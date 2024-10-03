@@ -24,7 +24,11 @@ const InteractionBar = ({ type, value, setValue, className }) => {
          />
          <button
             className={`interaction-bar__icon ${
-               value ? 'interaction-bar__icon--active' : ''
+               value
+                  ? 'interaction-bar__icon--active'
+                  : type === 'approve'
+                  ? 'interaction-bar__icon--approve'
+                  : ''
             }`}
             onClick={handleClick}
          >

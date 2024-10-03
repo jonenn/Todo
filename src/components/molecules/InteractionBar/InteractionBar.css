@@ -37,3 +37,13 @@
    -ms-user-select: none;
    pointer-events: none;
 }
+
+.modal__input {
+   margin-left: 3rem;
+   margin-right: 3rem;
+}
+
+.interaction-bar__icon--approve svg {
+   height: 1.5rem;
+   width: 1.41rem;
+}

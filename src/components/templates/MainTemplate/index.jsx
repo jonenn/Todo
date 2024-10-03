@@ -41,7 +41,7 @@ const MainTemplate = () => {
             <div className="nav__content">
                <img src={octopus} alt="todo-octopus" className="nav__img" />
                <Separator className="separator--bottom" />
-               <UserProfile></UserProfile>
+               <UserProfile />
             </div>
          </div>
          <div className="todos">
