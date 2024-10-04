@@ -8,10 +8,14 @@ const MainPage = () => {
    const toggleModal = useSelector((state) => {
       return state.modal.isOpen;
    });
+
+   const nickname = useSelector((state) => {
+      return state.modal.nickname;
+   });
    return (
       <div className="main">
          <MainTemplate />
-         {toggleModal && <Modal title="Welcome!" />}
+         {toggleModal && nickname === 'Guest' && <Modal title="Welcome!" />}
       </div>
    );
 };

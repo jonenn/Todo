@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { getDefaultData, saveData } from '../../utils/localStorage';
 
 const modalSlice = createSlice({
    name: 'modal',
    initialState: {
       isOpen: true,
-      nickname: '',
+      nickname: getDefaultData('nickname', 'Guest'),
    },
    reducers: {
       toggleModal: (state, action) => {
@@ -14,6 +15,8 @@ const modalSlice = createSlice({
       enterNickname: (state, action) => {
          const { nickname } = action.payload;
          state.nickname = nickname;
+         saveData('nickname', nickname);
+         state.isOpen = false;
       },
    },
 });

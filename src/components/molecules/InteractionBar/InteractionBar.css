@@ -14,10 +14,6 @@
    min-height: max-content;
 }
 
-.interaction-bar:focus {
-   outline-color: red;
-}
-
 .interaction-bar__icon {
    display: flex;
    align-items: center;
@@ -45,5 +41,5 @@
 
 .interaction-bar__icon--approve svg {
    height: 1.5rem;
-   width: 1.41rem;
+   width: 1.2rem;
 }
