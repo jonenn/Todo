@@ -5,7 +5,6 @@ import { Separator } from '../../atoms/Separator';
 import { InteractionBar } from '../../molecules/InteractionBar';
 import { ModalContainer } from '../../molecules/Modal/ModalContainer';
 import { MClose } from '../../atoms/Modal/MClose';
-
 const Modal = ({ title }) => {
    const [value, setValue] = useState('');
 
