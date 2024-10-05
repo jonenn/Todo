@@ -1,3 +1,7 @@
 *:focus-visible {
    outline: 2px var(--purple) solid;
 }
+
+.capitalized {
+   text-transform: capitalize;
+}

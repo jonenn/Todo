@@ -15,7 +15,6 @@ const Icon = ({ color, size, onClick, type, className }) => {
       edit: Edit,
       save: Save,
       search: Search,
-      approve: Approve,
       create: Create,
       list: List,
    };

@@ -6,12 +6,23 @@
    align-items: center;
    justify-content: space-between;
    border: 1px solid var(--purple);
-   box-shadow: 0px 0px 18px 0px rgba(145, 119, 242, 0.3);
+   box-shadow: 0px 0px 18px 0px var(--purple-opacity);
    margin-bottom: 1.2rem;
    min-height: 3.9rem;
    padding: 0.99rem 1.8rem;
    line-height: normal;
    min-height: max-content;
+   color: var(--purple);
+}
+
+.interaction-bar--error {
+   border: 1px solid var(--red);
+   box-shadow: 0px 0px 18px 0px var(--red-opacity);
+   color: var(--red);
+}
+
+.interaction-bar--modal {
+   background-color: var(--white-bg-opacity);
 }
 
 .interaction-bar__icon {

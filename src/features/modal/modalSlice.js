@@ -6,6 +6,7 @@ const modalSlice = createSlice({
    initialState: {
       isOpen: true,
       nickname: getDefaultData('nickname', 'Guest'),
+      error: '',
    },
    reducers: {
       toggleModal: (state, action) => {
@@ -18,9 +19,13 @@ const modalSlice = createSlice({
          saveData('nickname', nickname);
          state.isOpen = false;
       },
+      setError: (state, action) => {
+         const { error } = action.payload;
+         state.error = error;
+      },
    },
 });
 
-export const { toggleModal, enterNickname } = modalSlice.actions;
+export const { toggleModal, enterNickname, setError } = modalSlice.actions;
 
 export default modalSlice.reducer;

@@ -1,24 +1,46 @@
 import ReactTextareaAutosize from 'react-textarea-autosize';
 import './InputBar.css';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addATask } from '../../../features/todo/todoSlice';
-import { enterNickname } from '../../../features/modal/modalSlice';
+import { enterNickname, setError } from '../../../features/modal/modalSlice';
 
 const InputBar = ({ value, setValue, type }) => {
+   const error = useSelector((state) => {
+      return state.modal.error;
+   });
    const dispatch = useDispatch();
 
    const handleKeyDown = (eve) => {
       if (eve.key === 'Enter') {
          eve.preventDefault();
-         type === 'approve'
-            ? dispatch(enterNickname({ nickname: value }))
-            : dispatch(addATask({ addTodoValue: value }));
-         setValue('');
+         const validate = validatingNickname(value);
+         if (validate) {
+            dispatch(setError({ error: validate }));
+         } else {
+            dispatch(setError({ error: '' }));
+            type === 'approve'
+               ? dispatch(enterNickname({ nickname: value }))
+               : dispatch(addATask({ addTodoValue: value }));
+            setValue('');
+         }
       }
    };
 
    const handleChange = (eve) => {
       setValue(eve.target.value);
+   };
+
+   const validatingNickname = (input) => {
+      if (input.length < 3) {
+         return 'Nickname should not be shorter than 3 characters';
+      }
+      if (input.length > 12) {
+         return 'Nickname should not be longer than 12 characters';
+      }
+      if (!/^[A-Za-z0-9]+$/.test(input)) {
+         return 'Nickname should not contain special characters.';
+      }
+      return '';
    };
 
    return type === 'create' ? (
@@ -37,19 +59,21 @@ const InputBar = ({ value, setValue, type }) => {
          }}
       />
    ) : (
-      <input
-         type="text"
-         placeholder={type === 'search' ? 'Search...' : 'Your nickname'}
-         className="input-bar"
-         maxLength="200"
-         value={value}
-         onChange={(eve) => {
-            handleChange(eve);
-         }}
-         onKeyDown={(eve) => {
-            handleKeyDown(eve);
-         }}
-      />
+      <>
+         <input
+            type="text"
+            placeholder={type === 'search' ? 'Search...' : 'Your nickname'}
+            className="input-bar"
+            maxLength="200"
+            value={value}
+            onChange={(eve) => {
+               handleChange(eve);
+            }}
+            onKeyDown={(eve) => {
+               handleKeyDown(eve);
+            }}
+         />
+      </>
    );
 };
 

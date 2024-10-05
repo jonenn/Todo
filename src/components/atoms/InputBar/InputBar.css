@@ -1,6 +1,6 @@
 .input-bar {
    height: 32px;
-   color: var(--purple);
+   color: inherit;
    border: none;
    font-size: 1.5rem;
    font-weight: 300;
