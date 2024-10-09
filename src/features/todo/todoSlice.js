@@ -36,17 +36,21 @@ const todoSlice = createSlice({
          saveData('todo-app-jonenn', todos);
          state.editingId = null;
       },
-      addATask: (state, action) => {
+      addATodo: (state, action) => {
          let todos = state.todoItems;
          const { addTodoValue } = action.payload;
          if (addTodoValue.trim().length > 0) {
-            todos.unshift({ text: addTodoValue, checked: false });
+            todos.unshift({
+               id: Date.now(),
+               text: addTodoValue,
+               checked: false,
+            });
             saveData('todo-app-jonenn', todos);
          }
       },
    },
 });
 
-export const { checkATodo, deleteATodo, editATodo, saveATodo, addATask } =
+export const { checkATodo, deleteATodo, editATodo, saveATodo, addATodo } =
    todoSlice.actions;
 export default todoSlice.reducer;

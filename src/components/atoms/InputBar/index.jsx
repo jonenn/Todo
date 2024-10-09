@@ -1,7 +1,7 @@
 import ReactTextareaAutosize from 'react-textarea-autosize';
 import './InputBar.css';
 import { useDispatch } from 'react-redux';
-import { addATask } from '../../../features/todo/todoSlice';
+import { addATodo } from '../../../features/todo/todoSlice';
 import { enterNickname, setError } from '../../../features/modal/modalSlice';
 
 const InputBar = ({ value, setValue, type }) => {
@@ -17,7 +17,7 @@ const InputBar = ({ value, setValue, type }) => {
             dispatch(setError({ error: '' }));
             type === 'approve'
                ? dispatch(enterNickname({ nickname: value }))
-               : dispatch(addATask({ addTodoValue: value }));
+               : dispatch(addATodo({ addTodoValue: value }));
             setValue('');
          }
       }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Checked } from '../../atoms/Checked';
 import './TodoCard.css';
 import { Edit } from '../../atoms/Edit';
@@ -9,9 +9,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { saveATodo } from '../../../features/todo/todoSlice';
 import { Paragraph } from '../../atoms/Paragraph';
 
-const TodoCard = ({ children, text, todos }) => {
+const TodoCard = ({ children, text, todos, id }) => {
    const todoIndex = todos.findIndex((todo) => {
-      return todo.text === text;
+      return todo.id === id;
    });
 
    const { todoItems, editingId } = useSelector((state) => {

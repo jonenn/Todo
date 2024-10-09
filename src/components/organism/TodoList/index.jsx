@@ -88,7 +88,12 @@ const TodoList = ({ searchedTodos, searchValue, setSearchValue, todos }) => {
             ) : (
                !loading &&
                searchedTodos.map((todo) => (
-                  <TodoCard key={todo.text} text={todo.text} todos={todos}>
+                  <TodoCard
+                     key={todo.id}
+                     text={todo.text}
+                     todos={todos}
+                     id={todo.id}
+                  >
                      {todo.text}
                   </TodoCard>
                ))

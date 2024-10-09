@@ -3,7 +3,7 @@ import './InteractionBar.css';
 import { Icon } from '../../atoms/Icon';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addATask } from '../../../features/todo/todoSlice';
+import { addATodo } from '../../../features/todo/todoSlice';
 
 const InteractionBar = ({ type, value, setValue, className, error }) => {
    const [addTodoValue, setAddTodoValue] = useState('');
@@ -11,7 +11,7 @@ const InteractionBar = ({ type, value, setValue, className, error }) => {
    const dispatch = useDispatch();
 
    const handleClick = () => {
-      dispatch(addATask({ addTodoValue: addTodoValue }));
+      dispatch(addATodo({ addTodoValue: addTodoValue }));
       setAddTodoValue('');
    };
 
