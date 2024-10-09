@@ -4,6 +4,7 @@ import { TodoCard } from '../../molecules/TodoCard';
 import './TodoList.css';
 import { LoadingCardTemplate } from '../../molecules/LoadingCardTemplate';
 import { Paragraph } from '../../atoms/Paragraph';
+import { NoTodos } from '../../atoms/NoTodos';
 
 const TodoList = ({ searchedTodos, searchValue, setSearchValue, todos }) => {
    const listRef = useRef(null);
@@ -81,13 +82,9 @@ const TodoList = ({ searchedTodos, searchValue, setSearchValue, todos }) => {
             )}
 
             {!todos.length ? (
-               <Paragraph className="no-todos">
-                  Create your first task!
-               </Paragraph>
+               <NoTodos />
             ) : !searchedTodos.length ? (
-               <Paragraph className="no-todos no-results">
-                  No results found. Try a different search term.
-               </Paragraph>
+               <NoTodos type="no-results" />
             ) : (
                !loading &&
                searchedTodos.map((todo) => (
