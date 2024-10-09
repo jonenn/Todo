@@ -8,7 +8,7 @@ import { ReactComponent as Create } from '../../../assets/create.svg';
 import { ReactComponent as List } from '../../../assets/list.svg';
 import './Icon.css';
 
-const Icon = ({ color, size, onClick, type, className }) => {
+const Icon = ({ onClick, type, className }) => {
    const iconList = {
       check: Check,
       delete: Delete,

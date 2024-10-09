@@ -1,19 +1,16 @@
 import ReactTextareaAutosize from 'react-textarea-autosize';
 import './InputBar.css';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addATask } from '../../../features/todo/todoSlice';
 import { enterNickname, setError } from '../../../features/modal/modalSlice';
 
 const InputBar = ({ value, setValue, type }) => {
-   const error = useSelector((state) => {
-      return state.modal.error;
-   });
    const dispatch = useDispatch();
 
    const handleKeyDown = (eve) => {
       if (eve.key === 'Enter') {
          eve.preventDefault();
-         const validate = validatingNickname(value);
+         const validate = type === 'approve' ? validatingNickname(value) : '';
          if (validate) {
             dispatch(setError({ error: validate }));
          } else {

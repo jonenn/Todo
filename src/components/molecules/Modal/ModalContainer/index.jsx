@@ -4,6 +4,7 @@ import { MOverlay } from '../../../atoms/Modal/MOverlay';
 import { MContent } from '../../../atoms/Modal/MContent';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleModal } from '../../../../features/modal/modalSlice';
+import { useEffect } from 'react';
 
 const ModalContainer = ({ children }) => {
    const isOpen = useSelector((state) => {
@@ -15,6 +16,18 @@ const ModalContainer = ({ children }) => {
       dispatch(toggleModal({ open: !isOpen }));
       console.log(isOpen);
    };
+
+   const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+         dispatch(toggleModal({ open: false }));
+      }
+   };
+
+   useEffect(() => {
+      if (isOpen) {
+         window.addEventListener('keydown', handleKeyDown);
+      }
+   }, [isOpen]);
 
    return ReactDOM.createPortal(
       <div className="modal__container">
