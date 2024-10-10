@@ -6,11 +6,16 @@ const defaultLists = [
    { title: 'Work' },
    { title: 'College' },
 ];
+
 const Nav = () => {
    return (
       <>
-         {defaultLists.map((nav) => {
-            return <NavBtn key={nav.title}>{nav.title}</NavBtn>;
+         {defaultLists.map((nav, index) => {
+            return (
+               <NavBtn key={index} id={index}>
+                  {nav.title}
+               </NavBtn>
+            );
          })}
       </>
    );

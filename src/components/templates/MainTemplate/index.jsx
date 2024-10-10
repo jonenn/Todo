@@ -7,12 +7,16 @@ import octopus from '../../../assets/octopus.png';
 import { TodoCounter } from '../../molecules/TodoCounter';
 import { useState } from 'react';
 import { UserProfile } from '../../molecules/UserProfile';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Separator } from '../../atoms/Separator';
 
 const MainTemplate = () => {
    const { todoItems: todos } = useSelector((store) => {
       return store.todos;
+   });
+
+   const nav = useSelector((store) => {
+      return store.nav.value;
    });
 
    const [searchValue, setSearchValue] = useState('');

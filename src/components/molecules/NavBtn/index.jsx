@@ -1,10 +1,22 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { Icon } from '../../atoms/Icon';
 import { NavItem } from '../../atoms/NavItem';
 import './NavBtn.css';
+import { chooseNav } from '../../../features/nav/navSlice';
 
-const NavBtn = ({ children }) => {
+const NavBtn = ({ children, id }) => {
+   const nav = useSelector((state) => {
+      return state.nav.value;
+   });
+   const dispatch = useDispatch();
+
+   const handleClick = () => {
+      const newId = id > 0 ? `-${id}` : '';
+      dispatch(chooseNav({ nav: `todo-app-jonenn${newId}` }));
+   };
+
    return (
-      <button className="nav__btn">
+      <button className="nav__btn" onClick={handleClick}>
          <Icon type="list" />
          <nav>
             <NavItem>{children}</NavItem>
