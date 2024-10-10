@@ -2,11 +2,11 @@ import { useDispatch } from 'react-redux';
 import { Icon } from '../Icon';
 import { editATodo } from '../../../features/todo/todoSlice';
 
-const Edit = ({ id }) => {
+const Edit = ({ id, nav }) => {
    const dispatch = useDispatch();
 
    const handleClick = () => {
-      dispatch(editATodo({ id: id }));
+      dispatch(editATodo({ id: id, nav: nav }));
    };
    return (
       <>

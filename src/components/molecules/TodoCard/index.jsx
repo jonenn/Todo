@@ -18,6 +18,10 @@ const TodoCard = ({ children, text, todos, id }) => {
       return state.todos;
    });
 
+   const chosenNav = useSelector((state) => {
+      return state.nav.value;
+   });
+
    const [todoValue, setTodoValue] = useState(children);
    const isChecked = todoItems[todoIndex].checked;
 
@@ -61,11 +65,11 @@ const TodoCard = ({ children, text, todos, id }) => {
             )}
             <div className="todo-card__icons">
                {editingId === todoIndex ? (
-                  <Save id={todoIndex} value={todoValue} />
+                  <Save id={todoIndex} value={todoValue} nav={chosenNav} />
                ) : (
-                  <Edit id={todoIndex} />
+                  <Edit id={todoIndex} nav={chosenNav} />
                )}
-               <Delete id={todoIndex} />
+               <Delete id={todoIndex} nav={chosenNav} />
             </div>
          </div>
       </div>

@@ -2,16 +2,19 @@ import { InputBar } from '../../atoms/InputBar';
 import './InteractionBar.css';
 import { Icon } from '../../atoms/Icon';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addATodo } from '../../../features/todo/todoSlice';
 
 const InteractionBar = ({ type, value, setValue, className, error }) => {
    const [addTodoValue, setAddTodoValue] = useState('');
+   const nav = useSelector((store) => {
+      return store.nav.value;
+   });
 
    const dispatch = useDispatch();
 
    const handleClick = () => {
-      dispatch(addATodo({ addTodoValue: addTodoValue }));
+      dispatch(addATodo({ addTodoValue: addTodoValue, nav: nav }));
       setAddTodoValue('');
    };
 
@@ -25,6 +28,7 @@ const InteractionBar = ({ type, value, setValue, className, error }) => {
             value={type === 'create' ? addTodoValue : value}
             setValue={type === 'create' ? setAddTodoValue : setValue}
             type={type}
+            nav={nav}
          />
          <button
             className={`interaction-bar__icon ${

@@ -14,15 +14,15 @@ const todoSlice = createSlice({
    reducers: {
       checkATodo: (state, action) => {
          const todos = state.todoItems;
-         const { id, checkState } = action.payload;
+         const { id, checkState, nav } = action.payload;
          todos[id].checked = checkState;
-         saveData('todo-app-jonenn', todos);
+         saveData(nav, todos);
       },
       deleteATodo: (state, action) => {
          const todos = state.todoItems;
-         const { id } = action.payload;
+         const { id, nav } = action.payload;
          todos.splice(id, 1);
-         saveData('todo-app-jonenn', todos);
+         saveData(nav, todos);
          state.editingId = null;
       },
       editATodo: (state, action) => {
@@ -31,26 +31,37 @@ const todoSlice = createSlice({
       },
       saveATodo: (state, action) => {
          const todos = state.todoItems;
-         const { id, todoValue } = action.payload;
+         const { id, todoValue, nav } = action.payload;
          todos[id].text = todoValue;
-         saveData('todo-app-jonenn', todos);
+         saveData(nav, todos);
          state.editingId = null;
       },
       addATodo: (state, action) => {
          let todos = state.todoItems;
-         const { addTodoValue } = action.payload;
+         const { addTodoValue, nav } = action.payload;
          if (addTodoValue.trim().length > 0) {
             todos.unshift({
                id: Date.now(),
                text: addTodoValue,
                checked: false,
             });
-            saveData('todo-app-jonenn', todos);
+            saveData(nav, todos);
          }
+      },
+      loadTodos: (state, action) => {
+         let newTodos = action.payload.todos;
+         console.log();
+         state.todoItems = getDefaultData(newTodos, []);
       },
    },
 });
 
-export const { checkATodo, deleteATodo, editATodo, saveATodo, addATodo } =
-   todoSlice.actions;
+export const {
+   checkATodo,
+   deleteATodo,
+   editATodo,
+   saveATodo,
+   addATodo,
+   loadTodos,
+} = todoSlice.actions;
 export default todoSlice.reducer;

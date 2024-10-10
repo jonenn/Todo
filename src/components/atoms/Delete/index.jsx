@@ -2,11 +2,11 @@ import { useDispatch } from 'react-redux';
 import { Icon } from '../Icon';
 import { deleteATodo } from '../../../features/todo/todoSlice';
 
-const Delete = ({ id }) => {
+const Delete = ({ id, nav }) => {
    const dispatch = useDispatch();
 
    const handleClick = () => {
-      dispatch(deleteATodo({ id: id }));
+      dispatch(deleteATodo({ id: id, nav: nav }));
    };
    return (
       <button

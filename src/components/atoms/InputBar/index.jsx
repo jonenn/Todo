@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { addATodo } from '../../../features/todo/todoSlice';
 import { enterNickname, setError } from '../../../features/modal/modalSlice';
 
-const InputBar = ({ value, setValue, type }) => {
+const InputBar = ({ value, setValue, type, nav }) => {
    const dispatch = useDispatch();
 
    const handleKeyDown = (eve) => {
@@ -17,7 +17,7 @@ const InputBar = ({ value, setValue, type }) => {
             dispatch(setError({ error: '' }));
             type === 'approve'
                ? dispatch(enterNickname({ nickname: value }))
-               : dispatch(addATodo({ addTodoValue: value }));
+               : dispatch(addATodo({ addTodoValue: value, nav: nav }));
             setValue('');
          }
       }

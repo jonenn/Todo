@@ -6,12 +6,17 @@ import { checkATodo } from '../../../features/todo/todoSlice.js';
 const Checked = ({ id }) => {
    const isChecked = useSelector((state) => {
       return state.todos.todoItems[id].checked;
-      // console.log(state.todos.todoItems[id]);
+   });
+
+   const chosenNav = useSelector((state) => {
+      return state.nav.value;
    });
 
    const isItChecked = () => {
       const newCheckState = !isChecked;
-      dispatch(checkATodo({ id: id, checkState: newCheckState }));
+      dispatch(
+         checkATodo({ id: id, checkState: newCheckState, nav: chosenNav })
+      );
    };
 
    const dispatch = useDispatch();
