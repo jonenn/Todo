@@ -5,7 +5,7 @@ import './NavBtn.css';
 import { chooseNav } from '../../../features/nav/navSlice';
 import { loadTodos } from '../../../features/todo/todoSlice';
 
-const NavBtn = ({ children, id }) => {
+const NavBtn = ({ children, id, chosenIndex }) => {
    const dispatch = useDispatch();
 
    const handleClick = () => {
@@ -15,7 +15,10 @@ const NavBtn = ({ children, id }) => {
    };
 
    return (
-      <button className="nav__btn" onClick={handleClick}>
+      <button
+         className={`nav__btn ${id === chosenIndex ? 'nav__btn--active' : ''}`}
+         onClick={handleClick}
+      >
          <Icon type="list" />
          <nav>
             <NavItem>{children}</NavItem>

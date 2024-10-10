@@ -8,6 +8,7 @@
    width: 100%;
    resize: none;
    overflow: hidden;
+   margin: 0.99rem 0.9rem 0.99rem 1.8rem;
 }
 
 .input-bar:focus {

@@ -4,13 +4,13 @@ import { useDispatch } from 'react-redux';
 import { addATodo } from '../../../features/todo/todoSlice';
 import { enterNickname, setError } from '../../../features/modal/modalSlice';
 
-const InputBar = ({ value, setValue, type, nav }) => {
+const InputBar = ({ value, setValue, type, nav, validation }) => {
    const dispatch = useDispatch();
 
    const handleKeyDown = (eve) => {
       if (eve.key === 'Enter') {
          eve.preventDefault();
-         const validate = type === 'approve' ? validatingNickname(value) : '';
+         const validate = type === 'approve' ? validation(value) : '';
          if (validate) {
             dispatch(setError({ error: validate }));
          } else {
@@ -25,19 +25,6 @@ const InputBar = ({ value, setValue, type, nav }) => {
 
    const handleChange = (eve) => {
       setValue(eve.target.value);
-   };
-
-   const validatingNickname = (input) => {
-      if (input.length < 3) {
-         return 'Nickname should not be shorter than 3 characters';
-      }
-      if (input.length > 12) {
-         return 'Nickname should not be longer than 12 characters';
-      }
-      if (!/^[A-Za-z0-9]+$/.test(input)) {
-         return 'Nickname should not contain special characters.';
-      }
-      return '';
    };
 
    return type === 'create' ? (

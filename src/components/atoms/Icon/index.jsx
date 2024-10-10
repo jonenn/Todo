@@ -17,6 +17,7 @@ const Icon = ({ onClick, type, className }) => {
       search: Search,
       create: Create,
       list: List,
+      approve: Approve,
    };
 
    const ChosenIcon = iconList[type];
