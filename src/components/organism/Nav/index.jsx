@@ -1,16 +1,15 @@
+import { useSelector } from 'react-redux';
 import { NavBtn } from '../../molecules/NavBtn';
 import './Nav.css';
 
-const defaultLists = [
-   { title: 'My Day' },
-   { title: 'Work' },
-   { title: 'College' },
-];
-
 const Nav = () => {
+   const lists = useSelector((state) => {
+      return state.nav.defaultCategories;
+   });
+
    return (
       <>
-         {defaultLists.map((nav, index) => {
+         {lists.map((nav, index) => {
             return (
                <NavBtn key={index} id={index}>
                   {nav.title}

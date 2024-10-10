@@ -7,7 +7,7 @@ import octopus from '../../../assets/octopus.png';
 import { TodoCounter } from '../../molecules/TodoCounter';
 import { useState } from 'react';
 import { UserProfile } from '../../molecules/UserProfile';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Separator } from '../../atoms/Separator';
 
 const MainTemplate = () => {
@@ -15,8 +15,8 @@ const MainTemplate = () => {
       return store.todos;
    });
 
-   const nav = useSelector((store) => {
-      return store.nav.value;
+   const navTitle = useSelector((store) => {
+      return store.nav.title;
    });
 
    const [searchValue, setSearchValue] = useState('');
@@ -49,11 +49,12 @@ const MainTemplate = () => {
             </div>
          </div>
          <div className="todos">
-            <div className="todos__title">
-               <H1>My Day</H1>
+            <div className="todos__titles">
+               <H1>{navTitle}</H1>
                <TodoCounter
                   total={totalTodos}
                   completed={checkedTodos.length}
+                  className="todos__subtitle"
                />
             </div>
             <TodoList

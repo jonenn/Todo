@@ -1,7 +1,7 @@
-const defaultLists = [
+const defaultCategories = [
    { title: 'My Day' },
    { title: 'Work' },
    { title: 'College' },
 ];
 
-export { defaultLists };
+export { defaultCategories };

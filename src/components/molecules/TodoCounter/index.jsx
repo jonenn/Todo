@@ -1,6 +1,6 @@
 import { H3 } from '../../atoms/H3';
 
-const TodoCounter = ({ completed, total }) => {
+const TodoCounter = ({ completed, total, className }) => {
    const phrase =
       total === 0
          ? 'Get started!'
@@ -14,7 +14,7 @@ const TodoCounter = ({ completed, total }) => {
          ? 'Starting is the first step to success'
          : 'Keep going, you’ve got this!';
    return (
-      <H3>
+      <H3 className={className}>
          {phrase}{' '}
          {completed === total
             ? ''
