@@ -29,6 +29,7 @@ const TodoCard = ({ children, text, todos, id }) => {
 
    const handleKeyDown = (eve) => {
       if (eve.key === 'Enter') {
+         eve.preventDefault();
          dispatch(
             saveATodo({ id: todoIndex, todoValue: todoValue, nav: chosenNav })
          );

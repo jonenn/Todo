@@ -32,9 +32,11 @@ const todoSlice = createSlice({
       saveATodo: (state, action) => {
          const todos = state.todoItems;
          const { id, todoValue, nav } = action.payload;
-         todos[id].text = todoValue;
-         saveData(nav, todos);
-         state.editingId = null;
+         if (todoValue.trim().length > 0) {
+            todos[id].text = todoValue;
+            saveData(nav, todos);
+            state.editingId = null;
+         }
       },
       addATodo: (state, action) => {
          let todos = state.todoItems;
