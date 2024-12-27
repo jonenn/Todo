@@ -51,9 +51,13 @@ const todoSlice = createSlice({
          }
       },
       loadTodos: (state, action) => {
-         let newTodos = action.payload.todos;
-         console.log();
-         state.todoItems = getDefaultData(newTodos, []);
+         let { todos } = action.payload;
+         if (todos === 'todo-app-jonenn') {
+            const storedTodos = localStorage.getItem('todo-app-jonenn');
+            if (!storedTodos){
+               saveData('todo-app-jonenn', defaultTodos)}
+            } ;
+         state.todoItems = getDefaultData(todos, []);
       },
    },
 });
