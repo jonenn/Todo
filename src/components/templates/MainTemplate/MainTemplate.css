@@ -44,9 +44,14 @@
 
 .todos__titles {
    padding: 1.8rem;
+   padding-bottom: 0;
    height: auto;
    max-height: 27%;
    box-sizing: border-box;
+   /* display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center; */
 }
 
 .todos__subtitle {
@@ -65,8 +70,9 @@
    .nav {
       width: 39%;
    }
-
+   
    .todos {
       width: 61%;
+      padding-top: 1.2rem;
    }
 }

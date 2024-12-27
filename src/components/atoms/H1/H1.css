@@ -8,7 +8,7 @@
    background-clip: text;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
-   margin: 0.6rem 0 0.3rem 0;
+   margin: 0.6rem 0 0 0;
    letter-spacing: -0.15rem;
    font-family: Roboto;
 }
