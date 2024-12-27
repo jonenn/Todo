@@ -6,3 +6,10 @@
    align-items: center;
    justify-content: center;
 }
+
+@media screen and (max-width: 1440px) {
+   .main {
+      gap: 6.6vw;
+      margin: 0 9.9vw;
+   }
+}

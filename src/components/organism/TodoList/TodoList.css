@@ -32,7 +32,7 @@
 }
 
 .lists__items::-webkit-scrollbar-thumb {
-   background-color: var(--purple-opacity);
+   background-color: rgba(119, 132, 242, .72);
    border-radius: 1.2rem;
 }
 
