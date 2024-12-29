@@ -21,3 +21,11 @@
    -webkit-text-fill-color: transparent;
    font-weight: 700;
 }
+
+@media screen and (max-width: 768px) {
+   .modal__content {
+      max-width: 84%;
+      padding: 3.6rem;
+      height: 24rem;
+   }
+}
