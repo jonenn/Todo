@@ -11,6 +11,8 @@ import { useSelector } from 'react-redux';
 import { Separator } from '../../atoms/Separator';
 
 const MainTemplate = () => {
+   const [isOn, setIsOn] = useState(true)
+
    const { todoItems: todos } = useSelector((store) => {
       return store.todos;
    });
@@ -33,14 +35,20 @@ const MainTemplate = () => {
       return todoText.includes(inputText);
    });
 
+   const handleNavClick = () => {
+      setIsOn(prevState => !prevState)
+   }
+
    return (
       <>
-         <div className="nav nav--on">
+         <div className={`nav nav--${isOn ? 'on':'off'}`}>
             <div className="nav__container"></div>
             <div className="nav__main">
                <H2>Lists</H2>
                <Separator />
-               <Nav />
+               <Nav
+                  handleNavClick={handleNavClick}
+               />
             </div>
             <div className="nav__content">
                <img src={octopus} alt="todo-octopus" className="nav__img" />
@@ -48,7 +56,7 @@ const MainTemplate = () => {
                <UserProfile />
             </div>
          </div>
-         <div className="todos todos--off">
+         <div className={`todos todos--${isOn ? 'off': 'on'}`}>
             <div className="todos__titles">
                <H1>{navTitle}</H1>
                <TodoCounter
