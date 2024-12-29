@@ -76,3 +76,40 @@
       padding-top: 1.2rem;
    }
 }
+
+@media screen and (max-width: 768px) {
+   .nav {
+      position: fixed;
+      width: 100%;
+      transition: left ease-out 300ms;
+      inset: 0;
+      margin: auto;
+   }
+   
+   .nav--on {
+      left: 0;
+   }
+   
+   .nav--off {
+      left: -200%;
+   }
+   
+   .todos {
+      position: fixed;
+      width: 84%;
+      padding-top: 1.2rem;
+      transition: left ease-out 300ms;
+      inset: 0;
+      margin: auto;
+
+   }
+   
+   .todos--on {
+      left: 0;
+      /* left: 0; */
+   }
+   
+   .todos--off {
+      left: 100%;
+   }
+}

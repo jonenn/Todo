@@ -35,7 +35,7 @@ const MainTemplate = () => {
 
    return (
       <>
-         <div className="nav">
+         <div className="nav nav--on">
             <div className="nav__container"></div>
             <div className="nav__main">
                <H2>Lists</H2>
@@ -48,7 +48,7 @@ const MainTemplate = () => {
                <UserProfile />
             </div>
          </div>
-         <div className="todos">
+         <div className="todos todos--off">
             <div className="todos__titles">
                <H1>{navTitle}</H1>
                <TodoCounter
