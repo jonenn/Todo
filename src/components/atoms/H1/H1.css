@@ -12,3 +12,7 @@
    letter-spacing: -0.15rem;
    font-family: Roboto;
 }
+
+.centered-title {
+   width: 100%;
+}

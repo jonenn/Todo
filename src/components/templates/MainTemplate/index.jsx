@@ -1,17 +1,18 @@
-import { H1 } from '../../atoms/H1';
-import { H2 } from '../../atoms/H2';
-import { Nav } from '../../organism/Nav';
-import { TodoList } from '../../organism/TodoList';
-import './MainTemplate.css';
-import octopus from '../../../assets/octopus.png';
-import { TodoCounter } from '../../molecules/TodoCounter';
-import { useState } from 'react';
-import { UserProfile } from '../../molecules/UserProfile';
-import { useSelector } from 'react-redux';
-import { Separator } from '../../atoms/Separator';
+import { H1 } from "../../atoms/H1";
+import { H2 } from "../../atoms/H2";
+import { Nav } from "../../organism/Nav";
+import { TodoList } from "../../organism/TodoList";
+import "./MainTemplate.css";
+import octopus from "../../../assets/octopus.png";
+import { TodoCounter } from "../../molecules/TodoCounter";
+import { useState } from "react";
+import { UserProfile } from "../../molecules/UserProfile";
+import { useSelector } from "react-redux";
+import { Separator } from "../../atoms/Separator";
+import { ReactComponent as BurgerMenu } from "../../../assets/burgerMenu.svg";
 
 const MainTemplate = () => {
-   const [isOn, setIsOn] = useState(true)
+   const [isOn, setIsOn] = useState(true);
 
    const { todoItems: todos } = useSelector((store) => {
       return store.todos;
@@ -21,7 +22,7 @@ const MainTemplate = () => {
       return store.nav.title;
    });
 
-   const [searchValue, setSearchValue] = useState('');
+   const [searchValue, setSearchValue] = useState("");
 
    const checkedTodos = todos.filter((todo) => {
       return !!todo.checked;
@@ -36,19 +37,18 @@ const MainTemplate = () => {
    });
 
    const handleNavClick = () => {
-      setIsOn(prevState => !prevState)
-   }
+      setIsOn((prevState) => !prevState);
+      console.log("is working!");
+   };
 
    return (
       <>
-         <div className={`nav nav--${isOn ? 'on':'off'}`}>
+         <div className={`nav nav--${isOn ? "on" : "off"}`}>
             <div className="nav__container"></div>
             <div className="nav__main">
                <H2>Lists</H2>
                <Separator />
-               <Nav
-                  handleNavClick={handleNavClick}
-               />
+               <Nav handleNavClick={handleNavClick} />
             </div>
             <div className="nav__content">
                <img src={octopus} alt="todo-octopus" className="nav__img" />
@@ -56,9 +56,14 @@ const MainTemplate = () => {
                <UserProfile />
             </div>
          </div>
-         <div className={`todos todos--${isOn ? 'off': 'on'}`}>
+         <div className={`todos todos--${isOn ? "off" : "on"}`}>
             <div className="todos__titles">
-               <H1>{navTitle}</H1>
+               <div className="todos__titles--responsive">
+                  <button className="burger-menu" onClick={handleNavClick}>
+                     <BurgerMenu />
+                  </button>
+                  <H1 className="centered-title">{navTitle}</H1>
+               </div>
                <TodoCounter
                   total={totalTodos}
                   completed={checkedTodos.length}
