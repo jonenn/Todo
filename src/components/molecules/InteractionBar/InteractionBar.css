@@ -82,3 +82,9 @@
    stroke-width: 2px;
    padding: 0.3rem;
 }
+
+@media screen and (max-width: 480px) {
+   .interaction-bar {
+      margin-bottom: 0.9rem;
+   }
+}
