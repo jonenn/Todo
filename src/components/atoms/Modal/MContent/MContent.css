@@ -29,3 +29,10 @@
       height: 24rem;
    }
 }
+
+@media screen and (max-width: 480px) {
+   .modal__content {
+      padding: 1.8rem;
+      height: 18rem;
+   }
+}

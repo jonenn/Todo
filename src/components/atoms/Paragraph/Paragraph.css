@@ -6,3 +6,13 @@
 .modal__p {
    margin-bottom: 2.1rem;
 }
+
+@media screen and (max-width: 480px) {
+   .paragraph {
+      font-size: 1.2rem;
+   }
+
+   .modal__p {
+      margin-bottom: 1.8rem;
+   }
+}

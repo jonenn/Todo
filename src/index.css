@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 html {
    --white-bg-solid: #e4e6f8;
@@ -54,17 +54,17 @@ body {
    height: 100%;
    width: 100%;
    color: var(--p);
-   font-family: 'Lato', sans-serif;
+   font-family: "Lato", sans-serif;
    overflow: hidden;
 }
 
 body::before {
-   content: '';
+   content: "";
    position: absolute;
    inset: 0;
    width: 100%;
    min-height: 100%;
-   background-image: url('./assets/pexels-pixabay-261403.jpg');
+   background-image: url("./assets/pexels-pixabay-261403.jpg");
    /* background-color: red; */
    background-size: cover;
    background-repeat: no-repeat;
@@ -89,4 +89,10 @@ img {
    user-drag: none;
    user-select: none;
    -webkit-user-select: none;
+}
+
+@media screen and (max-width: 480px) {
+   nav ul li {
+      font-size: 1rem;
+   }
 }

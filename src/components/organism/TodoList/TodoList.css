@@ -32,7 +32,7 @@
 }
 
 .lists__items::-webkit-scrollbar-thumb {
-   background-color: rgba(119, 132, 242, .72);
+   background-color: rgba(119, 132, 242, 0.72);
    border-radius: 1.2rem;
 }
 
@@ -79,5 +79,11 @@
    }
    100% {
       transform: translateX(0);
+   }
+}
+
+@media screen and (max-width: 480px) {
+   .no-todos {
+      font-size: 0.81rem;
    }
 }

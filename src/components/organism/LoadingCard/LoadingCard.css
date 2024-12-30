@@ -16,3 +16,9 @@
    gap: 0.6rem;
    margin: 0 0.6rem;
 }
+
+@media screen and (max-width: 480px) {
+   .loading-card {
+      font-size: 1.5rem;
+   }
+}
