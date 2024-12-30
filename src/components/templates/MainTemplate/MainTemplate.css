@@ -119,6 +119,7 @@
    .todos__titles {
       padding: 0;
       padding-top: 1.8rem;
+      max-height: 36%;
    }
 
    .burger-menu {
@@ -154,6 +155,18 @@
    }
 
    .todos {
-      width: 96%;
+      width: 93%;
+      margin: 0 auto;
+      height: 100vh;
+      padding: 1.2rem;
+   }
+
+   .todos__titles {
+      padding: 0;
+      padding-top: 0.9rem;
+   }
+
+   .lists {
+      height: 67%;
    }
 }

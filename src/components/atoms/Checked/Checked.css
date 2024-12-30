@@ -12,6 +12,7 @@
    -moz-user-select: none;
    -ms-user-select: none;
    user-select: none;
+   aspect-ratio: 1/1;
 }
 
 .check--checked {
