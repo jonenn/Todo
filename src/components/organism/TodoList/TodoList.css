@@ -86,4 +86,8 @@
    .no-todos {
       font-size: 0.81rem;
    }
+
+   .lists__add {
+      margin-top: 0.9rem;
+   }
 }

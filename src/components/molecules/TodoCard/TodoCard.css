@@ -20,7 +20,7 @@
    overflow-wrap: break-word;
    white-space: normal;
    hyphens: auto;
-   margin: 1.2rem 0;
+   margin: 0.6rem 0;
    line-height: 1.5;
 }
 
@@ -107,10 +107,22 @@
 @media screen and (max-width: 480px) {
    .todo-card {
       margin: 0;
-      padding: 0 2.1rem;
+      padding: 0 1.2rem;
    }
 
    .todo-card__input {
       font-size: 1.2rem;
+   }
+
+   .todo-card__content {
+      gap: 0.6rem;
+   }
+
+   .todo-card__icons {
+      gap: 0;
+   }
+
+   .todo-card__name--unchecked {
+      max-width: 66%;
    }
 }

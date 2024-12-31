@@ -155,6 +155,10 @@
       transition: left ease-in-out 300ms;
    }
 
+   .nav__container {
+      bottom: 0;
+   }
+
    .todos {
       width: 93%;
       margin: 0 auto;
@@ -166,10 +170,6 @@
    .todos__titles {
       padding: 0;
       padding-top: 0.9rem;
-   }
-
-   .lists {
-      height: 67%;
    }
 
    .burger-menu {
