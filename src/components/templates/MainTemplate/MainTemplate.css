@@ -170,6 +170,14 @@
    .todos__titles {
       padding: 0;
       padding-top: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      max-height: 18%;
+   }
+
+   .todos__subtitle {
+      width: 72%;
+      margin: 0 auto;
    }
 
    .burger-menu {
