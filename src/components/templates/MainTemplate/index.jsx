@@ -60,7 +60,7 @@ const MainTemplate = () => {
             <div className="todos__titles">
                <div className="todos__titles--responsive">
                   <button className="burger-menu" onClick={handleNavClick}>
-                     <BurgerMenu />
+                     <BurgerMenu className="burger-menu__svg" />
                   </button>
                   <H1 className="centered-title">{navTitle}</H1>
                </div>

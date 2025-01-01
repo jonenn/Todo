@@ -59,3 +59,13 @@
       transform: scale(1);
    }
 }
+
+@media screen and (max-width: 480px) {
+   .check {
+      --check-size: 1.42rem;
+   }
+
+   .check__image {
+      --check-img-size: 0.45rem;
+   }
+}
