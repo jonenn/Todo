@@ -172,23 +172,25 @@
       padding-top: 0;
       display: flex;
       flex-direction: column;
-      max-height: 18%;
+      max-height: fit-content;
    }
 
    .todos__subtitle {
+      height: auto;
       width: 72%;
       margin: 0 auto;
+      padding: 0.6rem 0;
    }
 
    .burger-menu {
       min-width: 2.7rem;
       min-height: 2.7rem;
-      padding: 0.6rem;
-      margin-top: 0.3rem;
+      padding: 0.3rem;
+      margin-top: 0.6rem;
    }
 
    .burger-menu__svg {
-      height: 0.93rem;
-      width: 0.93rem;
+      height: 0.99rem;
+      width: 0.99rem;
    }
 }
