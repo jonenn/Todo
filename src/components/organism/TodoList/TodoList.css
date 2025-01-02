@@ -87,6 +87,10 @@
       font-size: 0.81rem;
    }
 
+   .lists {
+      max-height: 90%;
+   }
+
    .lists__add {
       margin-top: 0.9rem;
    }

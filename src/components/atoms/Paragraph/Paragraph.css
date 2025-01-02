@@ -13,6 +13,7 @@
    }
 
    .modal__p {
-      margin-bottom: 1.8rem;
+      margin-bottom: 0.99rem;
+      margin-top: 0;
    }
 }
